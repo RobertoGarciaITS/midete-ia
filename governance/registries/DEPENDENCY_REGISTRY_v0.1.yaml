@@ -1,0 +1,13 @@
+version: v0.1
+work_items:
+  P00-01: {name: Freeze Constitution, depends_on: [], status: COMPLETE}
+  P00-02: {name: Repository Contract, depends_on: [P00-01], status: COMPLETE}
+  P00-03: {name: Scaffold Repository, depends_on: [P00-01, P00-02], status: COMPLETE}
+  P00-04: {name: Artifact Registry, depends_on: [P00-01, P00-03], status: COMPLETE}
+  P00-05: {name: Prompt Registry, depends_on: [P00-01, P00-03], status: COMPLETE}
+  P00-06: {name: Skill Registry, depends_on: [P00-01, P00-03], status: COMPLETE}
+  P00-07: {name: Dependency Registry, depends_on: [P00-01, P00-03], status: COMPLETE}
+  P00-08: {name: Evidence Registry, depends_on: [P00-04, P00-05, P00-06, P00-07], status: COMPLETE}
+  P00-09: {name: Gate Model and P00 Closeout, depends_on: [P00-01, P00-02, P00-03, P00-04, P00-05, P00-06, P00-07, P00-08], status: COMPLETE}
+next_phase:
+  P01-01: {name: Problem Statement, depends_on: [GATE-P00], status: READY}
