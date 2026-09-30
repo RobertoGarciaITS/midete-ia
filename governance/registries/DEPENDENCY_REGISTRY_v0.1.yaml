@@ -31,3 +31,6 @@ active_experiments:
   EXP-001-09: {name: Commercial Offer, depends_on: [EXP-001-01], status: BLOCKED}
   EXP-001-10: {name: Experiment Results, depends_on: [EXP-001-07, EXP-001-08, EXP-001-09], status: BLOCKED}
   EXP-001-11: {name: Experiment Closeout, depends_on: [EXP-001-10], status: BLOCKED}
+
+context_reconciliation:
+  GOV-CTX-001: {name: P01 Bootstrap Reconciliation, depends_on: [GATE-P00], status: COMPLETE}

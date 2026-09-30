@@ -10,6 +10,7 @@ phase_state:
   current: P01_PRODUCT_DEFINITION
   next_work_item: P01-01
   current_gate: GATE-P01
+  active_phase_prompt: prompts/phase/P01_PRODUCT_DEFINITION_PROMPT_v0.1.md
   active_experiment: EXP-001
   next_experiment_work_item: EXP-001-02
   experiment_gate: GATE-EXP-001

@@ -34,3 +34,13 @@ Do not implement application code, APIs, database schemas, AI agents, payment in
 ## Change discipline
 
 The Project Constitution is FROZEN. Proposed changes must use the Change Control Contract and create a new constitution version after approval.
+
+## Current phase and skill resolution
+
+Resolve the active phase prompt through the manifest and Prompt Registry. P01 uses
+`prompts/phase/P01_PRODUCT_DEFINITION_PROMPT_v0.1.md`.
+Resolve skill instructions through the Skill Registry; REGISTERED alone does not mean executable.
+For P01-01 use SK-PROD at `skills/product-management/SKILL.md`.
+If a required prompt or skill path is missing, record the dependency as BLOCKED.
+
+Read-only audits may continue without gate progression. Persistent changes require explicit user authorization; approval of one task does not approve later phases or product release.

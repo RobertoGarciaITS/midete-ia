@@ -48,3 +48,11 @@ evidence:
     type: REVIEW
     result: PASS
     source: docs/project/P00_CLOSEOUT_v0.1.md
+  - id: EVID-GOV-CTX-001
+    work_item: GOV-CTX-001
+    type: REVIEW
+    result: PASS
+    source: docs/project/P01_BOOTSTRAP_RECONCILIATION_v0.1.md
+    limitation: Documentation reconciliation only; question-bank acceptance and P01-01 completion remain pending.
+reserved_evidence:
+  - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
