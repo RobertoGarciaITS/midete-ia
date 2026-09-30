@@ -1,0 +1,104 @@
+artifact_id: ART-025
+title: TECHNOLOGY_ADOPTION_DECISION_MATRIX
+version: v0.1
+status: ACTIVE
+scope: GLOBAL
+
+decision_rule:
+  default: DEFER
+  approve_when:
+    - verified_requirement_exists
+    - current_architecture_is_insufficient
+    - benefits_outweigh_complexity_and_risk
+    - acceptance_evidence_is_defined
+
+technologies:
+  - capability: static_landing
+    technology_examples: [HTML, static_site_builder, simple_hosted_page]
+    current_status: APPROVED_FOR_EXP_001
+    trigger: public_message_and_conversion_entry_point
+    current_need: true
+
+  - capability: form_capture
+    technology_examples: [Google_Forms, Microsoft_Forms, equivalent]
+    current_status: APPROVED_FOR_EXP_001
+    trigger: structured_response_collection
+    current_need: true
+
+  - capability: tabular_persistence
+    technology_examples: [Google_Sheets, Excel_Online]
+    current_status: APPROVED_FOR_EXP_001
+    trigger: small_scale_experiment_response_storage
+    current_need: true
+
+  - capability: relational_database
+    technology_examples: [PostgreSQL, Cloud_SQL, Azure_Database_for_PostgreSQL, RDS_PostgreSQL]
+    current_status: DEFER
+    trigger: persistent_users_relations_history_transactions_or_concurrency
+    current_need: false
+
+  - capability: custom_frontend
+    technology_examples: [Next.js, React, TypeScript]
+    current_status: DEFER
+    trigger: dynamic_personalized_UX_or_product_workflows
+    current_need: false
+
+  - capability: backend_api
+    technology_examples: [FastAPI, Python]
+    current_status: DEFER
+    trigger: reusable_business_logic_integrations_security_or_custom_scoring
+    current_need: false
+
+  - capability: authentication
+    technology_examples: [managed_identity_provider, OAuth, OIDC]
+    current_status: DEFER
+    trigger: persistent_accounts_private_user_data_or_entitlements
+    current_need: false
+
+  - capability: llm_integration
+    technology_examples: [managed_LLM_API]
+    current_status: DEFER
+    trigger: dynamic_personalized_analysis_that_outperforms_static_rules
+    current_need: false
+
+  - capability: rag
+    technology_examples: [embeddings, vector_search, governed_corpus]
+    current_status: DEFER
+    trigger: grounded_answers_require_curated_knowledge_retrieval
+    current_need: false
+
+  - capability: agent
+    technology_examples: [tool_enabled_agent]
+    current_status: DEFER
+    trigger: multi_step_tool_workflow_requires_runtime_reasoning
+    current_need: false
+
+  - capability: multi_agent
+    technology_examples: [orchestrator, specialized_agents, subagents]
+    current_status: DEFER
+    trigger: separation_of_agent_responsibilities_improves_control_quality_or_scale
+    current_need: false
+
+  - capability: containers
+    technology_examples: [Docker]
+    current_status: DEFER
+    trigger: custom_runtime_requires_reproducible_packaging
+    current_need: false
+
+  - capability: managed_cloud_runtime
+    technology_examples: [GCP_Cloud_Run, Azure_Container_Apps, AWS_equivalent]
+    current_status: DEFER
+    trigger: custom_backend_or_worker_requires_managed_runtime
+    current_need: false
+
+  - capability: infrastructure_as_code
+    technology_examples: [Terraform]
+    current_status: DEFER
+    trigger: infrastructure_becomes_repeatable_multi_environment_or_auditable
+    current_need: false
+
+  - capability: kubernetes
+    technology_examples: [GKE, AKS, EKS]
+    current_status: DEFER
+    trigger: demonstrated_scaling_resilience_policy_orchestration_need_not_met_by_simpler_managed_services
+    current_need: false
