@@ -28,3 +28,4 @@ artifacts:
   - {id: ART-025, path: artifacts/architecture/TECHNOLOGY_ADOPTION_DECISION_MATRIX_v0.1.yaml, phase: GLOBAL, status: ACTIVE}
   - {id: ART-026, path: docs/architecture/ARCHITECTURE_EVOLUTION_ROADMAP_v0.1.md, phase: GLOBAL, status: APPROVED}
   - {id: ART-027, path: governance/standards/TASK_COMPLETION_REPORT_STANDARD_v0.1.md, phase: GLOBAL, status: APPROVED}
+  - {id: ART-028, path: docs/product/experiments/EXP-001/EXPERIMENT_HYPOTHESIS_v0.1.md, phase: P01, status: APPROVED}
