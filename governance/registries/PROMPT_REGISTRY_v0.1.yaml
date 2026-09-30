@@ -11,7 +11,8 @@ prompts:
     path: prompts/phase/P01_PRODUCT_DEFINITION_PROMPT_v0.1.md
     phase: P01
     status: APPROVED
-    governs: [P01-01]
+    governs: [P01-01, P01-02, P01-03, P01-04, P01-05, P01-06, P01-07, P01-08]
+    currently_activated_for: [P01-01]
 planned_hierarchy:
   L0: PROJECT_CONSTITUTION
   L1: PHASE_PROMPT
