@@ -37,10 +37,10 @@ The Project Constitution is FROZEN. Proposed changes must use the Change Control
 
 ## Current phase and skill resolution
 
-Resolve the active phase prompt through the manifest and Prompt Registry. P01 uses
-`prompts/phase/P01_PRODUCT_DEFINITION_PROMPT_v0.1.md`.
-Resolve skill instructions through the Skill Registry; REGISTERED alone does not mean executable.
-For P01-01 use SK-PROD at `skills/product-management/SKILL.md`.
-If a required prompt or skill path is missing, record the dependency as BLOCKED.
+Resolve the current phase and active phase prompt from the Project Execution Manifest.
+Resolve the prompt definition and governed work-item scope through the Prompt Registry.
+Resolve required skill instructions through the Skill Registry; REGISTERED alone does not mean executable.
+Resolve the work-item contract, artifact, dependencies, evidence and gate from the Traceability Matrix and relevant registries.
+If a required prompt, skill path, contract, upstream artifact, evidence source or gate is missing, record the dependency as BLOCKED instead of inferring it.
 
-Read-only audits may continue without gate progression. Persistent changes require explicit user authorization; approval of one task does not approve later phases or product release.
+Read-only audits may continue without gate progression. Persistent changes require explicit user authorization; approval of one task does not approve subsequent work items, later phases or product release.
