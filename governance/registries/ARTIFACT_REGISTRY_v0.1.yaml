@@ -29,7 +29,7 @@ artifacts:
   - {id: ART-026, path: docs/architecture/ARCHITECTURE_EVOLUTION_ROADMAP_v0.1.md, phase: GLOBAL, status: APPROVED}
   - {id: ART-027, path: governance/standards/TASK_COMPLETION_REPORT_STANDARD_v0.1.md, phase: GLOBAL, status: APPROVED}
   - {id: ART-028, path: docs/product/experiments/EXP-001/EXPERIMENT_HYPOTHESIS_v0.1.md, phase: P01, status: APPROVED}
-  - {id: ART-029, path: docs/product/experiments/EXP-001/ASSESSMENT_QUESTION_BANK_v0.1.yaml, phase: P01, status: DRAFT, validation_state: READY_FOR_VALIDATION}
+  - {id: ART-029, path: docs/product/experiments/EXP-001/ASSESSMENT_QUESTION_BANK_v0.1.yaml, phase: P01, status: APPROVED, validation_state: ACCEPTED}
   - {id: ART-030, path: prompts/phase/P01_PRODUCT_DEFINITION_PROMPT_v0.1.md, phase: P01, status: APPROVED}
   - {id: ART-031, path: governance/contracts/PRODUCT_DEFINITION_CONTRACT_v0.1.md, phase: P01, status: APPROVED}
   - {id: ART-032, path: skills/product-management/SKILL.md, phase: P01, status: APPROVED}
