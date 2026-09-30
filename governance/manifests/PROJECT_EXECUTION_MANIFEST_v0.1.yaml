@@ -10,6 +10,9 @@ phase_state:
   current: P01_PRODUCT_DEFINITION
   next_work_item: P01-01
   current_gate: GATE-P01
+  active_experiment: EXP-001
+  next_experiment_work_item: EXP-001-01
+  experiment_gate: GATE-EXP-001
 
 gate_results:
   GATE-P00:
@@ -38,3 +41,22 @@ registries:
   traceability: artifacts/registry/PROJECT_WORK_TRACEABILITY_MATRIX_v0.1.csv
 
 execution_priority: [VALIDATE, SELL, BUILD, MEASURE, IMPROVE, SCALE]
+
+architecture_governance:
+  contract: governance/contracts/EVOLUTIONARY_ARCHITECTURE_CONTRACT_v0.1.md
+  technology_decision_matrix: artifacts/architecture/TECHNOLOGY_ADOPTION_DECISION_MATRIX_v0.1.yaml
+  evolution_roadmap: docs/architecture/ARCHITECTURE_EVOLUTION_ROADMAP_v0.1.md
+  principle: SIMPLEST_ARCHITECTURE_THAT_VALIDATES_CURRENT_HYPOTHESIS
+
+task_reporting:
+  standard: governance/standards/TASK_COMPLETION_REPORT_STANDARD_v0.1.md
+  repository_mutation_requires_user_confirmation: true
+  read_only_consultation_allowed_without_confirmation: true
+
+experiments:
+  EXP-001:
+    name: AI_CAREER_TRANSFORMATION_SNAPSHOT
+    status: READY
+    contract: docs/product/experiments/EXP-001/MICRO_MVP_001_CONTRACT_v0.1.md
+    next_work_item: EXP-001-01
+    gate: GATE-EXP-001
