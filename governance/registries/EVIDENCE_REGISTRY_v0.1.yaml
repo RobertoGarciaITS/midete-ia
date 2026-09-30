@@ -53,6 +53,7 @@ evidence:
     type: REVIEW
     result: PASS
     source: docs/project/P01_BOOTSTRAP_RECONCILIATION_v0.1.md
+    commit: 4c0e1450c4e6922659d7012bb3c2ce8e5fc2e77d
     limitation: Documentation reconciliation only; question-bank acceptance and P01-01 completion remain pending.
 reserved_evidence:
   - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
