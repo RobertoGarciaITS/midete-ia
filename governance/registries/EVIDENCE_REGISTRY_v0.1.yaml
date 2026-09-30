@@ -1,0 +1,50 @@
+version: v0.1
+evidence:
+  - id: EVID-P00-001
+    work_item: P00-01
+    type: REVIEW
+    result: PASS
+    source: governance/constitution/MIDETE_AI_PROJECT_CONSTITUTION_v0.1.md
+    commit: d732a5a4dddd819efb5ee0da45955a14440114ca
+  - id: EVID-P00-002
+    work_item: P00-02
+    type: VALIDATION
+    result: PASS
+    source: governance/contracts/REPOSITORY_STRUCTURE_CONTRACT_v0.1.md
+    commit: 42de4c8136d7ed42a3b5a0be092f5e49348f5c62
+  - id: EVID-P00-003
+    work_item: P00-03
+    type: VALIDATION
+    result: PASS
+    source: repository scaffold root files
+    limitation: Git does not persist empty directories; each canonical future root is anchored by a README.
+  - id: EVID-P00-004
+    work_item: P00-04
+    type: VALIDATION
+    result: PASS
+    source: governance/registries/ARTIFACT_REGISTRY_v0.1.yaml
+  - id: EVID-P00-005
+    work_item: P00-05
+    type: VALIDATION
+    result: PASS
+    source: governance/registries/PROMPT_REGISTRY_v0.1.yaml
+  - id: EVID-P00-006
+    work_item: P00-06
+    type: VALIDATION
+    result: PASS
+    source: governance/registries/SKILL_REGISTRY_v0.1.yaml
+  - id: EVID-P00-007
+    work_item: P00-07
+    type: VALIDATION
+    result: PASS
+    source: governance/registries/DEPENDENCY_REGISTRY_v0.1.yaml
+  - id: EVID-P00-008
+    work_item: P00-08
+    type: VALIDATION
+    result: PASS
+    source: governance/registries/EVIDENCE_REGISTRY_v0.1.yaml
+  - id: EVID-P00-009
+    work_item: P00-09
+    type: REVIEW
+    result: PASS
+    source: docs/project/P00_CLOSEOUT_v0.1.md
