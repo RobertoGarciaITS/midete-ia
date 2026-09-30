@@ -23,3 +23,8 @@ artifacts:
   - {id: ART-020, path: docs/project/REPOSITORY_SCAFFOLD_v0.1.md, phase: P00, status: APPROVED}
   - {id: ART-021, path: docs/project/P00_CLOSEOUT_v0.1.md, phase: P00, status: APPROVED}
   - {id: ART-022, path: governance/registries/ARTIFACT_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
+  - {id: ART-023, path: docs/product/experiments/EXP-001/MICRO_MVP_001_CONTRACT_v0.1.md, phase: P01, status: APPROVED}
+  - {id: ART-024, path: governance/contracts/EVOLUTIONARY_ARCHITECTURE_CONTRACT_v0.1.md, phase: GLOBAL, status: APPROVED}
+  - {id: ART-025, path: artifacts/architecture/TECHNOLOGY_ADOPTION_DECISION_MATRIX_v0.1.yaml, phase: GLOBAL, status: ACTIVE}
+  - {id: ART-026, path: docs/architecture/ARCHITECTURE_EVOLUTION_ROADMAP_v0.1.md, phase: GLOBAL, status: APPROVED}
+  - {id: ART-027, path: governance/standards/TASK_COMPLETION_REPORT_STANDARD_v0.1.md, phase: GLOBAL, status: APPROVED}
