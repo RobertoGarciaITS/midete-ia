@@ -11,7 +11,7 @@ phase_state:
   next_work_item: P01-01
   current_gate: GATE-P01
   active_experiment: EXP-001
-  next_experiment_work_item: EXP-001-01
+  next_experiment_work_item: EXP-001-02
   experiment_gate: GATE-EXP-001
 
 gate_results:
@@ -58,5 +58,5 @@ experiments:
     name: AI_CAREER_TRANSFORMATION_SNAPSHOT
     status: READY
     contract: docs/product/experiments/EXP-001/MICRO_MVP_001_CONTRACT_v0.1.md
-    next_work_item: EXP-001-01
+    next_work_item: EXP-001-02
     gate: GATE-EXP-001
