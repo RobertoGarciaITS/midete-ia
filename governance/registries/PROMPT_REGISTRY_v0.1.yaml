@@ -1,0 +1,14 @@
+version: v0.1
+prompts:
+  - id: PRM-P00-001
+    level: L1_PHASE
+    path: prompts/phase/P00_PROJECT_GOVERNANCE_PROMPT_v0.1.md
+    phase: P00
+    status: FROZEN
+    governs: [P00-01, P00-02, P00-03, P00-04, P00-05, P00-06, P00-07, P00-08, P00-09]
+planned_hierarchy:
+  L0: PROJECT_CONSTITUTION
+  L1: PHASE_PROMPT
+  L2: WORK_PACKAGE_PROMPT
+  L3: TASK_PROMPT
+  L4: MICRO_TASK_PROMPT
