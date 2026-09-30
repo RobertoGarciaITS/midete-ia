@@ -1,0 +1,40 @@
+project: MIDETE-IA
+manifest_version: v0.1
+constitution:
+  path: governance/constitution/MIDETE_AI_PROJECT_CONSTITUTION_v0.1.md
+  version: v0.1
+  status: FROZEN
+
+phase_state:
+  completed: [P00_PROJECT_GOVERNANCE_AND_REPOSITORY_BOOTSTRAP]
+  current: P01_PRODUCT_DEFINITION
+  next_work_item: P01-01
+  current_gate: GATE-P01
+
+gate_results:
+  GATE-P00:
+    result: PASS
+    evidence: EVID-P00-009
+
+phases:
+  - {id: P00, name: PROJECT_GOVERNANCE_AND_REPOSITORY_BOOTSTRAP, status: COMPLETE}
+  - {id: P01, name: PRODUCT_DEFINITION, status: READY}
+  - {id: P02, name: REQUIREMENTS, status: BLOCKED}
+  - {id: P03, name: ARCHITECTURE, status: BLOCKED}
+  - {id: P04, name: MVP_SLICE_01, status: BLOCKED}
+  - {id: P05, name: MVP_SLICE_02, status: BLOCKED}
+  - {id: P06, name: PAYMENT_AND_COMMERCIAL, status: BLOCKED}
+  - {id: P07, name: DEPLOYMENT, status: BLOCKED}
+  - {id: P08, name: OBSERVABILITY_AND_SECURITY, status: BLOCKED}
+  - {id: P09, name: AI_ADVANCED, status: BLOCKED}
+  - {id: P10, name: KUBERNETES, status: BLOCKED}
+
+registries:
+  artifact: governance/registries/ARTIFACT_REGISTRY_v0.1.yaml
+  prompt: governance/registries/PROMPT_REGISTRY_v0.1.yaml
+  skill: governance/registries/SKILL_REGISTRY_v0.1.yaml
+  dependency: governance/registries/DEPENDENCY_REGISTRY_v0.1.yaml
+  evidence: governance/registries/EVIDENCE_REGISTRY_v0.1.yaml
+  traceability: artifacts/registry/PROJECT_WORK_TRACEABILITY_MATRIX_v0.1.csv
+
+execution_priority: [VALIDATE, SELL, BUILD, MEASURE, IMPROVE, SCALE]
