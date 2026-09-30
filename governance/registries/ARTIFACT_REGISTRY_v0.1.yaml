@@ -1,0 +1,24 @@
+version: v0.1
+status: ACTIVE
+artifacts:
+  - {id: ART-001, path: governance/constitution/MIDETE_AI_PROJECT_CONSTITUTION_v0.1.md, phase: P00, status: FROZEN}
+  - {id: ART-002, path: README.md, phase: P00, status: APPROVED}
+  - {id: ART-003, path: AGENTS.md, phase: P00, status: APPROVED}
+  - {id: ART-004, path: governance/manifests/PROJECT_EXECUTION_MANIFEST_v0.1.yaml, phase: P00, status: APPROVED}
+  - {id: ART-005, path: artifacts/registry/PROJECT_WORK_TRACEABILITY_MATRIX_v0.1.csv, phase: P00, status: APPROVED}
+  - {id: ART-006, path: governance/gates/GATE_MODEL_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-007, path: prompts/phase/P00_PROJECT_GOVERNANCE_PROMPT_v0.1.md, phase: P00, status: FROZEN}
+  - {id: ART-008, path: governance/contracts/PROJECT_CONSTITUTION_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-009, path: governance/contracts/CONTEXT_ACQUISITION_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-010, path: governance/contracts/REPOSITORY_STRUCTURE_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-011, path: governance/contracts/ARTIFACT_LIFECYCLE_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-012, path: governance/contracts/REQUIREMENT_TRACEABILITY_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-013, path: governance/contracts/CHANGE_CONTROL_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-014, path: governance/contracts/EVIDENCE_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-015, path: governance/contracts/RELEASE_GATE_CONTRACT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-016, path: governance/registries/PROMPT_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
+  - {id: ART-017, path: governance/registries/SKILL_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
+  - {id: ART-018, path: governance/registries/DEPENDENCY_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
+  - {id: ART-019, path: governance/registries/EVIDENCE_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
+  - {id: ART-020, path: docs/project/REPOSITORY_SCAFFOLD_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-021, path: docs/project/P00_CLOSEOUT_v0.1.md, phase: P00, status: APPROVED}
