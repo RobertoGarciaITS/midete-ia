@@ -1,0 +1,496 @@
+artifact_id: ART-029
+title: ASSESSMENT_QUESTION_BANK
+version: v0.1
+status: READY_FOR_VALIDATION
+experiment_id: EXP-001
+work_item: EXP-001-02
+parent_contract: MICRO_MVP_001_CONTRACT_v0.1.md
+parent_hypothesis: EXPERIMENT_HYPOTHESIS_v0.1.md
+decision_gate: GATE-EXP-001
+
+purpose: >
+  Define the exact question set for the EXP-001 AI Career Transformation Snapshot
+  without adding questions beyond the approved Micro-MVP scope.
+
+assessment_structure:
+  total_questions: 15
+  intent_questions: 1
+  professional_context_questions: 3
+  readiness_questions: 10
+  optional_open_text_questions: 1
+  estimated_completion_minutes: "4-6"
+
+response_policy:
+  no_employer_name: true
+  no_salary: true
+  no_confidential_information_request: true
+  no_proprietary_information_request: true
+  no_secrets_request: true
+  predictive_employment_claims_prohibited: true
+
+privacy_classes:
+  P0:
+    name: MINIMAL_NON_IDENTIFYING
+    description: Broad categorical response with no direct personal identifier requested.
+  P1:
+    name: PROFESSIONAL_CONTEXT
+    description: Broad self-reported professional context without employer or confidential data.
+  P2:
+    name: OPEN_TEXT_CAUTION
+    description: Optional free text where the user must be reminded not to include confidential or sensitive information.
+
+questions:
+
+  - question_id: INT-001
+    order: 1
+    section: INTENT
+    dimension: USER_INTENT
+    question_text: "¿Qué quieres descubrir hoy sobre tu carrera?"
+    response_type: SINGLE_SELECT
+    allowed_values:
+      - code: INT-01
+        label: "Cómo está cambiando mi profesión con IA"
+        intent: Transformation
+      - code: INT-02
+        label: "Qué habilidades debería actualizar"
+        intent: Upskilling
+      - code: INT-03
+        label: "Si mi experiencia sigue siendo competitiva"
+        intent: Employability
+      - code: INT-04
+        label: "Qué nuevas oportunidades podría aprovechar"
+        intent: Mobility
+      - code: INT-05
+        label: "Qué tan preparado estoy ante un cambio laboral"
+        intent: Resilience
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: false
+      purpose: segmentation_and_market_research
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-003
+      analysis_use:
+        - intent_distribution
+        - dominant_career_concern
+    privacy_classification: P0
+    rationale: >
+      Identify the user's primary reason for entering the assessment without
+      assuming in advance which career concern is dominant.
+
+  - question_id: PROF-001
+    order: 2
+    section: PROFESSIONAL_CONTEXT
+    dimension: PROFESSION
+    question_text: "¿Cuál es tu profesión o área principal?"
+    response_type: SHORT_TEXT
+    allowed_values: null
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: false
+      purpose: segmentation
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-008
+      analysis_use:
+        - profession_segmentation
+        - cross_professional_relevance
+    privacy_classification: P1
+    rationale: >
+      Capture broad professional context required to interpret the snapshot and
+      evaluate whether the problem is transversal across professional domains.
+
+  - question_id: PROF-002
+    order: 3
+    section: PROFESSIONAL_CONTEXT
+    dimension: INDUSTRY_FUNCTION
+    question_text: "¿En qué industria / función trabajas?"
+    response_type: SHORT_TEXT
+    allowed_values: null
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: false
+      purpose: segmentation
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-008
+      analysis_use:
+        - industry_function_segmentation
+        - segment_dilution_analysis
+    privacy_classification: P1
+    rationale: >
+      Capture broad industry or functional context without requesting employer
+      identity or confidential company information.
+
+  - question_id: PROF-003
+    order: 4
+    section: PROFESSIONAL_CONTEXT
+    dimension: EXPERIENCE
+    question_text: "¿Cuántos años de experiencia tienes?"
+    response_type: SINGLE_SELECT
+    allowed_values:
+      - "0–2"
+      - "3–5"
+      - "6–10"
+      - "11–15"
+      - "16+"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: false
+      purpose: segmentation
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-008
+      analysis_use:
+        - experience_band_segmentation
+    privacy_classification: P1
+    rationale: >
+      Capture experience level using broad ranges while avoiding collection of
+      unnecessary identifying detail.
+
+  - question_id: RDY-001
+    order: 5
+    section: READINESS
+    dimension: VIGENCIA_PROFESIONAL
+    question_text: "¿Sabes cuáles son las principales tecnologías que están cambiando tu profesión?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - technology_awareness
+    privacy_classification: P0
+    rationale: >
+      Measure self-reported awareness of technologies affecting the user's profession.
+
+  - question_id: RDY-002
+    order: 6
+    section: READINESS
+    dimension: VIGENCIA_PROFESIONAL
+    question_text: "¿Has actualizado una habilidad relevante durante los últimos 12 meses?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - recent_skill_update
+    privacy_classification: P0
+    rationale: >
+      Measure whether the user reports recent professional skill renewal.
+
+  - question_id: RDY-003
+    order: 7
+    section: READINESS
+    dimension: AI_DIGITAL_READINESS
+    question_text: "¿Utilizas actualmente alguna herramienta de IA o automatización relacionada con tu trabajo?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+        - HYP-EXP001-002
+      analysis_use:
+        - current_ai_automation_use
+    privacy_classification: P0
+    rationale: >
+      Measure self-reported use of AI or automation in current professional work.
+
+  - question_id: RDY-004
+    order: 8
+    section: READINESS
+    dimension: AI_DIGITAL_READINESS
+    question_text: "¿Podrías explicar cómo la IA podría modificar alguna de tus actividades actuales?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - ai_impact_awareness
+    privacy_classification: P0
+    rationale: >
+      Measure whether the user reports understanding at least one plausible way
+      AI may affect current work activities.
+
+  - question_id: RDY-005
+    order: 9
+    section: READINESS
+    dimension: MARKET_AWARENESS
+    question_text: "¿Has revisado vacantes de tu profesión durante los últimos 6 meses?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - recent_market_observation
+    privacy_classification: P0
+    rationale: >
+      Measure recent direct exposure to current labor-market demand.
+
+  - question_id: RDY-006
+    order: 10
+    section: READINESS
+    dimension: MARKET_AWARENESS
+    question_text: "¿Conoces las principales habilidades que actualmente solicitan para puestos similares al tuyo?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - current_skill_demand_awareness
+    privacy_classification: P0
+    rationale: >
+      Measure self-reported knowledge of skills currently requested for comparable roles.
+
+  - question_id: RDY-007
+    order: 11
+    section: READINESS
+    dimension: TRANSFERIBILIDAD
+    question_text: "¿Podrías identificar al menos dos puestos diferentes donde tu experiencia actual sería útil?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - perceived_skill_transferability
+    privacy_classification: P0
+    rationale: >
+      Measure whether the user recognizes possible transferability of existing experience.
+
+  - question_id: RDY-008
+    order: 12
+    section: READINESS
+    dimension: EVIDENCIA_PROFESIONAL
+    question_text: "¿Puedes demostrar tus capacidades mediante resultados, proyectos, certificaciones o portafolio?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - professional_evidence_readiness
+    privacy_classification: P0
+    rationale: >
+      Measure whether the user reports having demonstrable evidence of professional capability.
+
+  - question_id: RDY-009
+    order: 13
+    section: READINESS
+    dimension: ADAPTABILIDAD_ACCION
+    question_text: "¿Tienes identificada al menos una habilidad que necesitas fortalecer?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+        - HYP-EXP001-003
+      analysis_use:
+        - skill_gap_awareness
+    privacy_classification: P0
+    rationale: >
+      Measure whether the user can identify at least one professional development priority.
+
+  - question_id: RDY-010
+    order: 14
+    section: READINESS
+    dimension: ADAPTABILIDAD_ACCION
+    question_text: "¿Tienes un plan concreto de aprendizaje para los próximos 90 días?"
+    response_type: BINARY
+    allowed_values:
+      - "Sí"
+      - "No"
+    required: true
+    scoring_behavior:
+      contributes_to_readiness_score: true
+      baseline_yes_indicator: 1
+      baseline_no_indicator: 0
+      final_model_reference: SCORING_MODEL_v0.1.yaml
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+      analysis_use:
+        - ninety_day_action_readiness
+    privacy_classification: P0
+    rationale: >
+      Measure whether awareness of development needs has progressed into a concrete near-term plan.
+
+  - question_id: VOC-001
+    order: 15
+    section: VOICE_OF_CUSTOMER
+    dimension: OPEN_CONTEXT
+    question_text: "En máximo 200 palabras, cuéntanos qué haces profesionalmente hoy y qué cambio en tu profesión te genera más curiosidad o incertidumbre."
+    response_type: LONG_TEXT
+    allowed_values: null
+    max_words_approx: 200
+    required: false
+    scoring_behavior:
+      contributes_to_readiness_score: false
+      purpose: voice_of_customer_only
+    market_research_use:
+      enabled: true
+      hypothesis_links:
+        - HYP-EXP001-001
+        - HYP-EXP001-003
+        - HYP-EXP001-008
+      analysis_use:
+        - recurring_language
+        - concern_themes
+        - unmet_needs
+        - segment_context
+    privacy_classification: P2
+    user_notice: >
+      No incluyas información confidencial de tu empresa, secretos comerciales,
+      contraseñas, información financiera interna ni datos sensibles innecesarios.
+    rationale: >
+      Capture the user's own language about professional work, uncertainty and
+      transformation without affecting the readiness score.
+
+dimension_map:
+  VIGENCIA_PROFESIONAL:
+    questions:
+      - RDY-001
+      - RDY-002
+  AI_DIGITAL_READINESS:
+    questions:
+      - RDY-003
+      - RDY-004
+  MARKET_AWARENESS:
+    questions:
+      - RDY-005
+      - RDY-006
+  TRANSFERIBILIDAD_EVIDENCIA:
+    questions:
+      - RDY-007
+      - RDY-008
+  ADAPTABILIDAD_ACCION:
+    questions:
+      - RDY-009
+      - RDY-010
+
+validation_rules:
+  - id: VAL-QB-001
+    rule: "Exactly 1 intent question must exist."
+  - id: VAL-QB-002
+    rule: "Exactly 3 professional context questions must exist."
+  - id: VAL-QB-003
+    rule: "Exactly 10 binary readiness questions must exist."
+  - id: VAL-QB-004
+    rule: "Exactly 1 optional open-text question must exist."
+  - id: VAL-QB-005
+    rule: "Only readiness questions may contribute to the readiness score."
+  - id: VAL-QB-006
+    rule: "The open-text response must not contribute to scoring."
+  - id: VAL-QB-007
+    rule: "No question may request employer name, salary, confidential company information or proprietary information."
+  - id: VAL-QB-008
+    rule: "Question wording must not claim or imply employment prediction."
+  - id: VAL-QB-009
+    rule: "The question bank must remain compatible with a simple no-code form implementation."
+
+acceptance_criteria:
+  - approved_scope_preserved
+  - no_extra_questions_added
+  - intent_options_match_parent_contract
+  - experience_ranges_match_parent_contract
+  - ten_readiness_questions_match_parent_contract
+  - optional_open_text_matches_parent_contract
+  - scoring_boundary_is_explicit
+  - market_research_use_is_defined
+  - privacy_classification_is_defined
+  - question_order_is_defined
+
+next_dependency:
+  work_item: EXP-001-03
+  artifact: SCORING_MODEL_v0.1.yaml
+  status: BLOCKED_UNTIL_GOVERNANCE_RECONCILIATION
