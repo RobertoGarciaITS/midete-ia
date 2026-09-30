@@ -55,5 +55,12 @@ evidence:
     source: docs/project/P01_BOOTSTRAP_RECONCILIATION_v0.1.md
     commit: 4c0e1450c4e6922659d7012bb3c2ce8e5fc2e77d
     limitation: Documentation reconciliation only; question-bank acceptance and P01-01 completion remain pending.
+  - id: EVID-EXP001-002
+    work_item: EXP-001-02
+    type: REVIEW
+    result: PASS
+    source: docs/product/experiments/EXP-001/ASSESSMENT_QUESTION_BANK_v0.1.yaml
+    commit: 5b21b21081e2e5aaa3d283e55d8296ffc3df71a8
+    limitation: Acceptance confirms approved question-bank scope, lifecycle metadata, scoring boundaries and privacy constraints; it does not validate the future scoring model or production deployment.
 reserved_evidence:
   - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
