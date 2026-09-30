@@ -6,7 +6,8 @@
 **Experiment ID:** `EXP-001`  
 **Work Item:** `EXP-001-01`  
 **Version:** `v0.1`  
-**Status:** `READY FOR VALIDATION`  
+**Status:** `APPROVED`  
+**Validation State:** `BASELINE_ACCEPTED`  
 **Parent Contract:** `MICRO_MVP_001_CONTRACT_v0.1.md`  
 **Scope:** Commercial Validation / Product Discovery  
 **Target Market:** Profesionales de México  
@@ -480,7 +481,7 @@ EXP-001-01 is complete when:
 ```text
 EXP-001-00  MICRO MVP CONTRACT      COMPLETE
                 ↓
-EXP-001-01  EXPERIMENT HYPOTHESIS   READY FOR VALIDATION
+EXP-001-01  EXPERIMENT HYPOTHESIS   COMPLETE
                 ↓
 EXP-001-02  ASSESSMENT QUESTION BANK
                 ↓
