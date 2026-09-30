@@ -22,3 +22,4 @@ artifacts:
   - {id: ART-019, path: governance/registries/EVIDENCE_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
   - {id: ART-020, path: docs/project/REPOSITORY_SCAFFOLD_v0.1.md, phase: P00, status: APPROVED}
   - {id: ART-021, path: docs/project/P00_CLOSEOUT_v0.1.md, phase: P00, status: APPROVED}
+  - {id: ART-022, path: governance/registries/ARTIFACT_REGISTRY_v0.1.yaml, phase: P00, status: APPROVED}
