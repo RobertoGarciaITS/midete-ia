@@ -1,11 +1,21 @@
 artifact_id: ART-029
 title: ASSESSMENT_QUESTION_BANK
 version: v0.1
-status: READY_FOR_VALIDATION
+phase: P01
+status: APPROVED
+validation_state: ACCEPTED
+owner: business-analysis
+upstream_dependencies:
+  - ART-023
+  - ART-028
+downstream_consumers:
+  - EXP-001-03
+  - EXP-001-07
 experiment_id: EXP-001
 work_item: EXP-001-02
 parent_contract: MICRO_MVP_001_CONTRACT_v0.1.md
 parent_hypothesis: EXPERIMENT_HYPOTHESIS_v0.1.md
+acceptance_evidence: EVID-EXP001-002
 decision_gate: GATE-EXP-001
 
 purpose: >
@@ -493,4 +503,4 @@ acceptance_criteria:
 next_dependency:
   work_item: EXP-001-03
   artifact: SCORING_MODEL_v0.1.yaml
-  status: BLOCKED_UNTIL_GOVERNANCE_RECONCILIATION
+  status: READY
