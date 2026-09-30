@@ -11,3 +11,23 @@ work_items:
   P00-09: {name: Gate Model and P00 Closeout, depends_on: [P00-01, P00-02, P00-03, P00-04, P00-05, P00-06, P00-07, P00-08], status: COMPLETE}
 next_phase:
   P01-01: {name: Problem Statement, depends_on: [GATE-P00], status: READY}
+
+global_governance:
+  GOV-ARCH-001: {name: Evolutionary Architecture Contract, depends_on: [P00-01], status: COMPLETE}
+  GOV-ARCH-002: {name: Technology Adoption Decision Matrix, depends_on: [GOV-ARCH-001], status: COMPLETE}
+  GOV-ARCH-003: {name: Architecture Evolution Roadmap, depends_on: [GOV-ARCH-001, GOV-ARCH-002], status: COMPLETE}
+  GOV-STD-001: {name: Task Completion Report Standard, depends_on: [P00-02, P00-04, P00-07, P00-08], status: COMPLETE}
+
+active_experiments:
+  EXP-001-00: {name: Micro MVP Contract Baseline, depends_on: [GATE-P00, GOV-ARCH-001], status: COMPLETE}
+  EXP-001-01: {name: Experiment Hypothesis, depends_on: [EXP-001-00], status: READY}
+  EXP-001-02: {name: Assessment Question Bank, depends_on: [EXP-001-01], status: BLOCKED}
+  EXP-001-03: {name: Scoring Model, depends_on: [EXP-001-02], status: BLOCKED}
+  EXP-001-04: {name: Profession Transformation Cards, depends_on: [EXP-001-01], status: BLOCKED}
+  EXP-001-05: {name: Landing Copy, depends_on: [EXP-001-01], status: BLOCKED}
+  EXP-001-06: {name: Privacy Disclaimer, depends_on: [EXP-001-00], status: READY}
+  EXP-001-07: {name: QA Test Plan, depends_on: [EXP-001-02, EXP-001-03, EXP-001-05, EXP-001-06], status: BLOCKED}
+  EXP-001-08: {name: Analytics Event Catalog, depends_on: [EXP-001-01], status: BLOCKED}
+  EXP-001-09: {name: Commercial Offer, depends_on: [EXP-001-01], status: BLOCKED}
+  EXP-001-10: {name: Experiment Results, depends_on: [EXP-001-07, EXP-001-08, EXP-001-09], status: BLOCKED}
+  EXP-001-11: {name: Experiment Closeout, depends_on: [EXP-001-10], status: BLOCKED}
