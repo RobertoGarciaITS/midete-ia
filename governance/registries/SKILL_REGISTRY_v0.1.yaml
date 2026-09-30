@@ -1,0 +1,24 @@
+version: v0.1
+skills:
+  - {id: SK-PM, name: project-management, status: REGISTERED}
+  - {id: SK-PROD, name: product-management, status: REGISTERED}
+  - {id: SK-BA, name: business-analysis, status: REGISTERED}
+  - {id: SK-REQ, name: requirements-engineering, status: REGISTERED}
+  - {id: SK-ARCH, name: software-architecture, status: REGISTERED}
+  - {id: SK-DATA, name: data-architecture, status: REGISTERED}
+  - {id: SK-AI, name: ai-architecture, status: REGISTERED}
+  - {id: SK-BE, name: backend-engineering, status: REGISTERED}
+  - {id: SK-FE, name: frontend-engineering, status: REGISTERED}
+  - {id: SK-CLOUD, name: cloud-engineering, status: REGISTERED}
+  - {id: SK-DEVOPS, name: devops, status: REGISTERED}
+  - {id: SK-QA, name: qa-testing, status: REGISTERED}
+  - {id: SK-SEC, name: security, status: REGISTERED}
+  - {id: SK-FINOPS, name: finops, status: REGISTERED}
+  - {id: SK-DOC, name: technical-documentation, status: REGISTERED}
+specialized_skills_planned:
+  - career-assessment-design
+  - job-fit-engine
+  - skill-graph
+  - rag-engineering
+  - ai-evaluation
+  - payment-integration
