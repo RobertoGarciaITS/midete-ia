@@ -38,3 +38,5 @@ artifacts:
   - {id: ART-035, path: docs/product/experiments/EXP-001/SCORING_MODEL_v0.1.yaml, phase: P01, status: APPROVED, validation_state: ACCEPTED}
   - {id: ART-036, path: docs/product/experiments/EXP-001/EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
   - {id: ART-037, path: prompts/experiment/EXP_001_PROMPT_CATALOG_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
+  - {id: ART-038, path: docs/architecture/EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md, phase: P01, status: APPROVED, validation_state: ACCEPTED}
+  - {id: ART-039, path: docs/architecture/adr/ADR_EXP001_001_STAGE0_WEB_APP_ARCHITECTURE_v0.1.md, phase: P01, status: APPROVED}
