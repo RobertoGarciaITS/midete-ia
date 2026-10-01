@@ -9,7 +9,9 @@
 **Validation State:** `READY_FOR_REVIEW`  
 **Owner / Role:** Product Management / Prompt Governance  
 **Experiment:** `EXP-001`  
-**Parent Plan:** `EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md`
+**Parent Plan:** `EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md`  
+**Upstream Dependencies:** `ART-036`, `ART-023`, current EXP-001 state  
+**Downstream Consumers:** WP-01 through WP-15 prompt activation / future executable prompt artifacts
 
 ## Usage rule
 
