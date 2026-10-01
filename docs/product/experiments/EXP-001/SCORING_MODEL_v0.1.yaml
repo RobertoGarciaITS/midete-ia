@@ -2,8 +2,9 @@ artifact_id: ART-035
 title: SCORING_MODEL
 version: v0.1
 phase: P01
-status: DRAFT
-validation_state: READY_FOR_REVIEW
+status: APPROVED
+validation_state: ACCEPTED
+acceptance_evidence: EVID-EXP001-003
 owner: business-analysis
 
 upstream_dependencies:
@@ -613,8 +614,8 @@ acceptance_criteria:
 
 review_state:
   content_self_check: COMPLETE
-  lifecycle_status: DRAFT
-  acceptance_review: PENDING
-  registration: PENDING
-  evidence: PENDING
-  dependency_advance: NOT_AUTHORIZED
+  lifecycle_status: APPROVED
+  acceptance_review: PASS
+  registration: COMPLETE
+  evidence: EVID-EXP001-003
+  dependency_advance: AUTHORIZED
