@@ -8,7 +8,7 @@ skills:
   - {id: SK-DATA, name: data-architecture, status: REGISTERED}
   - {id: SK-AI, name: ai-architecture, status: REGISTERED}
   - {id: SK-BE, name: backend-engineering, status: REGISTERED}
-  - {id: SK-FE, name: frontend-engineering, status: REGISTERED}
+  - {id: SK-FE, name: frontend-engineering, status: AVAILABLE, path: skills/frontend-engineering/SKILL.md, scope: EXP-001-WP03}
   - {id: SK-CLOUD, name: cloud-engineering, status: REGISTERED}
   - {id: SK-DEVOPS, name: devops, status: REGISTERED}
   - {id: SK-QA, name: qa-testing, status: REGISTERED}
