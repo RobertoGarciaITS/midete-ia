@@ -86,18 +86,35 @@ No work package is considered complete because a document or code file merely ex
 EXP-001-00 Micro-MVP Contract       COMPLETE
 EXP-001-01 Experiment Hypothesis    COMPLETE
 EXP-001-02 Assessment Question Bank COMPLETE
-EXP-001-03 Scoring Model            READY / artifact DRAFT
+EXP-001-03 Scoring Model            COMPLETE / ART-035 APPROVED
+
+WP-01 Scoring Acceptance            COMPLETE
+WP-02 Architecture Fit Check        COMPLETE
+WP-03 Scoring Engine                READY / NEXT
 ```
 
-The first implementation code is intentionally scheduled before all later EXP-001 content artifacts are fully specified.
+Architecture baseline for WP-03:
+
+```text
+Google Apps Script Web App
++ HTML Service
++ HTML/CSS/JavaScript
++ Google Sheets in the later persistence slice
+```
+
+Decision references:
+- `ART-038 — EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md`
+- `ART-039 — ADR_EXP001_001_STAGE0_WEB_APP_ARCHITECTURE_v0.1.md`
+
+The first implementation code is now authorized for planning/execution through WP-03, subject to the explicit user authorization required for repository mutations.
 
 ## 5. Work-package backlog
 
 | WP | Work Package | Spec Owner | Build Owner | Test / Review | Primary Output | Activation |
 |---:|---|---|---|---|---|---|
-| WP-01 | Scoring Acceptance | ChatGPT | — | ChatGPT | accepted scoring model + evidence | NEXT |
-| WP-02 | Architecture Fit Check | ChatGPT | — | ChatGPT | Stage-0 implementation decision | AFTER WP-01 |
-| WP-03 | Scoring Engine | ChatGPT spec | Codex | Codex + ChatGPT audit | executable scoring + tests | AFTER WP-02 |
+| WP-01 | Scoring Acceptance | ChatGPT | — | ChatGPT | accepted scoring model + evidence | COMPLETE |
+| WP-02 | Architecture Fit Check | ChatGPT | — | ChatGPT | Stage-0 implementation decision | COMPLETE |
+| WP-03 | Scoring Engine | ChatGPT spec | Codex | Codex + ChatGPT audit | executable scoring + tests | NEXT / READY |
 | WP-04 | Assessment Capture | ChatGPT | Codex | Codex + ChatGPT audit | functional assessment | PLANNED |
 | WP-05 | Response Storage | ChatGPT | Codex | Codex + ChatGPT audit | minimal persistence | PLANNED |
 | WP-06 | Result Snapshot | ChatGPT | Codex | Codex + ChatGPT audit | immediate result | PLANNED |
