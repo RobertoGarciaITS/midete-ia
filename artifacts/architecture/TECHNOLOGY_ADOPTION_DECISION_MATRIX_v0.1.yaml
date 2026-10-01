@@ -31,6 +31,18 @@ technologies:
     trigger: small_scale_experiment_response_storage
     current_need: true
 
+  - capability: stage0_web_app_runtime
+    technology_examples: [Google_Apps_Script_Web_App, HTML_Service, HTML_CSS_JavaScript]
+    current_status: APPROVED_FOR_EXP_001
+    trigger: immediate_deterministic_personalized_result_with_low_operational_burden
+    current_need: true
+    decision_artifact: ART-039
+    persistence_target: Google_Sheets_when_WP_05_is_activated
+    limitations:
+      - Apps_Script_quotas_and_deployment_permissions_must_be_rechecked_before_launch
+      - HTML_Service_sandbox_constraints_apply
+      - WP_03_scoring_logic_must_remain_decoupled_from_runtime_APIs
+
   - capability: relational_database
     technology_examples: [PostgreSQL, Cloud_SQL, Azure_Database_for_PostgreSQL, RDS_PostgreSQL]
     current_status: DEFER
