@@ -12,7 +12,7 @@ phase_state:
   current_gate: GATE-P01
   active_phase_prompt: prompts/phase/P01_PRODUCT_DEFINITION_PROMPT_v0.1.md
   active_experiment: EXP-001
-  next_experiment_work_item: EXP-001-03
+  next_experiment_work_item: EXP-001-06
   experiment_gate: GATE-EXP-001
 
 gate_results:
@@ -62,6 +62,6 @@ experiments:
     contract: docs/product/experiments/EXP-001/MICRO_MVP_001_CONTRACT_v0.1.md
     execution_plan: docs/product/experiments/EXP-001/EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md
     prompt_catalog: prompts/experiment/EXP_001_PROMPT_CATALOG_v0.1.md
-    next_work_item: EXP-001-03
-    next_delivery_package: WP-01_SCORING_ACCEPTANCE
+    next_work_item: EXP-001-06
+    next_delivery_package: WP-02_ARCHITECTURE_FIT
     gate: GATE-EXP-001
