@@ -69,5 +69,12 @@ evidence:
     source: docs/product/experiments/EXP-001/SCORING_MODEL_v0.1.yaml
     commit: 5d6d56e33cec91eed39af41221316afafe466196
     limitation: Acceptance validates the deterministic scoring specification and its review vectors; it does not validate code implementation, integration behavior, production runtime, or live-user outcomes.
+  - id: EVID-EXP001-WP02-001
+    work_item: EXP-001-WP02
+    type: REVIEW
+    result: PASS
+    source: docs/architecture/EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md
+    commit: 59c2a10a3a22d8471bc699b2e4e670941eb6dec3
+    limitation: Architecture-fit evidence validates the Stage-0 technology decision for the current EXP-001 requirements; it does not validate production quotas, public deployment permissions, runtime reliability, or live-user behavior.
 reserved_evidence:
   - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
