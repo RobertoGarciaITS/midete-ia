@@ -32,5 +32,10 @@ active_experiments:
   EXP-001-10: {name: Experiment Results, depends_on: [EXP-001-07, EXP-001-08, EXP-001-09], status: BLOCKED}
   EXP-001-11: {name: Experiment Closeout, depends_on: [EXP-001-10], status: BLOCKED}
 
+rolling_wave_delivery:
+  EXP-001-WP01: {name: Scoring Acceptance, depends_on: [EXP-001-03], status: COMPLETE}
+  EXP-001-WP02: {name: Architecture Fit Check, depends_on: [EXP-001-WP01, GOV-ARCH-001, GOV-ARCH-002, GOV-ARCH-003], status: COMPLETE}
+  EXP-001-WP03: {name: Scoring Engine, depends_on: [EXP-001-WP02, EXP-001-03], status: READY}
+
 context_reconciliation:
   GOV-CTX-001: {name: P01 Bootstrap Reconciliation, depends_on: [GATE-P00], status: COMPLETE}
