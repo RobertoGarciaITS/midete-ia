@@ -1,0 +1,620 @@
+artifact_id: ART-035
+title: SCORING_MODEL
+version: v0.1
+phase: P01
+status: DRAFT
+validation_state: READY_FOR_REVIEW
+owner: business-analysis
+
+upstream_dependencies:
+  - ART-023
+  - ART-028
+  - ART-029
+
+downstream_consumers:
+  - EXP-001-07
+
+experiment_id: EXP-001
+work_item: EXP-001-03
+prompt_id: PRM-EXP001-003
+required_skill: SK-BA
+parent_contract: MICRO_MVP_001_CONTRACT_v0.1.md
+question_bank: ASSESSMENT_QUESTION_BANK_v0.1.yaml
+decision_gate: GATE-EXP-001
+
+purpose: >
+  Convert the ten approved binary readiness responses into a deterministic,
+  explainable AI Career Transformation Snapshot without making employment,
+  hiring, layoff, salary, competence or career-success predictions.
+
+model_type: DETERMINISTIC_RULE_BASED
+implementation_neutral: true
+external_benchmarking_used: false
+statistical_model_used: false
+ai_inference_used: false
+weights_used: false
+
+baseline_contract:
+  yes_value: 1
+  no_value: 0
+  scored_question_count: 10
+  dimension_count: 5
+  questions_per_dimension: 2
+  dimension_score_min: 0
+  dimension_score_max: 2
+  overall_score_min: 0
+  overall_score_max: 10
+  overall_measure_name: indicators_of_professional_preparation_present
+
+design_decisions:
+  - id: SD-EXP001-003-001
+    rule: >
+      EXP-001 does not use overall qualitative bands such as low, medium, high,
+      beginner, advanced, employable or at-risk.
+    rationale: >
+      The parent contract authorizes a count of indicators present, not a
+      validated classification scale. Avoiding bands reduces unsupported
+      interpretation and false precision.
+    evidence_status: DESIGN_DECISION_NOT_MARKET_VALIDATED
+
+  - id: SD-EXP001-003-002
+    rule: >
+      A score is produced only when all ten required readiness responses are
+      present and valid.
+    rationale: >
+      Partial scoring would make totals incomparable while the approved
+      assessment defines all ten readiness questions as required.
+    evidence_status: DESIGN_DECISION_NOT_MARKET_VALIDATED
+
+  - id: SD-EXP001-003-003
+    rule: >
+      When multiple dimensions share the lowest score, preserve all tied
+      dimensions as priority candidates and select one primary priority using
+      the fixed dimension order defined in this artifact.
+    rationale: >
+      A deterministic single priority may be useful for a simple result view,
+      but the tie must remain visible so the selected dimension is not
+      misrepresented as uniquely weaker.
+    evidence_status: DESIGN_DECISION_NOT_MARKET_VALIDATED
+
+  - id: SD-EXP001-003-004
+    rule: >
+      When every dimension scores 2 of 2, no priority gap is declared.
+    rationale: >
+      Selecting a weakest dimension when every approved indicator is present
+      would create a false distinction.
+    evidence_status: DESIGN_DECISION_NOT_MARKET_VALIDATED
+
+  - id: SD-EXP001-003-005
+    rule: >
+      Strongest dimensions are those sharing the maximum dimension score.
+      If a downstream implementation requires one primary strength, use the
+      same fixed dimension order as the deterministic tie-breaker.
+    rationale: >
+      Preserve ties while still permitting a deterministic simple UI.
+    evidence_status: DESIGN_DECISION_NOT_MARKET_VALIDATED
+
+input_contract:
+  required_scored_questions:
+    - RDY-001
+    - RDY-002
+    - RDY-003
+    - RDY-004
+    - RDY-005
+    - RDY-006
+    - RDY-007
+    - RDY-008
+    - RDY-009
+    - RDY-010
+
+  allowed_response_values:
+    - "Sí"
+    - "No"
+
+  non_scored_questions:
+    - INT-001
+    - PROF-001
+    - PROF-002
+    - PROF-003
+    - VOC-001
+
+  response_normalization:
+    scoring_engine_contract: STRICT_CANONICAL_VALUES
+    rule: >
+      The scoring engine receives only the canonical values "Sí" or "No".
+      A user-interface adapter may normalize equivalent form values before
+      calling the scoring logic, but normalization must not alter the meaning
+      of the approved response.
+    invalid_after_normalization: REJECT_SCORE
+
+point_mapping:
+  "Sí": 1
+  "No": 0
+
+question_rules:
+  RDY-001: {dimension: VIGENCIA_PROFESIONAL, yes_points: 1, no_points: 0}
+  RDY-002: {dimension: VIGENCIA_PROFESIONAL, yes_points: 1, no_points: 0}
+  RDY-003: {dimension: AI_DIGITAL_READINESS, yes_points: 1, no_points: 0}
+  RDY-004: {dimension: AI_DIGITAL_READINESS, yes_points: 1, no_points: 0}
+  RDY-005: {dimension: MARKET_AWARENESS, yes_points: 1, no_points: 0}
+  RDY-006: {dimension: MARKET_AWARENESS, yes_points: 1, no_points: 0}
+  RDY-007: {dimension: TRANSFERIBILIDAD_EVIDENCIA, yes_points: 1, no_points: 0}
+  RDY-008: {dimension: TRANSFERIBILIDAD_EVIDENCIA, yes_points: 1, no_points: 0}
+  RDY-009: {dimension: ADAPTABILIDAD_ACCION, yes_points: 1, no_points: 0}
+  RDY-010: {dimension: ADAPTABILIDAD_ACCION, yes_points: 1, no_points: 0}
+
+dimension_order:
+  - VIGENCIA_PROFESIONAL
+  - AI_DIGITAL_READINESS
+  - MARKET_AWARENESS
+  - TRANSFERIBILIDAD_EVIDENCIA
+  - ADAPTABILIDAD_ACCION
+
+dimensions:
+  VIGENCIA_PROFESIONAL:
+    display_label: "Vigencia profesional"
+    order: 1
+    questions:
+      - RDY-001
+      - RDY-002
+    calculation: "points(RDY-001) + points(RDY-002)"
+    range: [0, 2]
+
+  AI_DIGITAL_READINESS:
+    display_label: "AI / Digital Readiness"
+    order: 2
+    questions:
+      - RDY-003
+      - RDY-004
+    calculation: "points(RDY-003) + points(RDY-004)"
+    range: [0, 2]
+
+  MARKET_AWARENESS:
+    display_label: "Market Awareness"
+    order: 3
+    questions:
+      - RDY-005
+      - RDY-006
+    calculation: "points(RDY-005) + points(RDY-006)"
+    range: [0, 2]
+
+  TRANSFERIBILIDAD_EVIDENCIA:
+    display_label: "Transferibilidad / Evidencia"
+    order: 4
+    questions:
+      - RDY-007
+      - RDY-008
+    calculation: "points(RDY-007) + points(RDY-008)"
+    range: [0, 2]
+
+  ADAPTABILIDAD_ACCION:
+    display_label: "Adaptabilidad / Acción"
+    order: 5
+    questions:
+      - RDY-009
+      - RDY-010
+    calculation: "points(RDY-009) + points(RDY-010)"
+    range: [0, 2]
+
+overall_calculation:
+  formula: >
+    score(VIGENCIA_PROFESIONAL)
+    + score(AI_DIGITAL_READINESS)
+    + score(MARKET_AWARENESS)
+    + score(TRANSFERIBILIDAD_EVIDENCIA)
+    + score(ADAPTABILIDAD_ACCION)
+  equivalent_formula: "sum(points(RDY-001..RDY-010))"
+  valid_range: [0, 10]
+  output_name: total_indicators_present
+  output_unit: indicators_present
+
+overall_interpretation:
+  qualitative_bands_enabled: false
+  percentages_enabled: false
+  ranking_against_other_users_enabled: false
+  benchmark_comparison_enabled: false
+  default_headline_template: >
+    Tienes {total_indicators_present} de 10 indicadores de preparación
+    profesional presentes.
+  explanatory_notice: >
+    Este resultado resume tus respuestas actuales. No representa un porcentaje
+    de empleabilidad, una predicción laboral ni una evaluación objetiva de tu
+    competencia profesional.
+
+dimension_display_contract:
+  format: "{display_label}: {dimension_score} / 2"
+  interpretation_rule: >
+    The number represents how many of the two approved self-reported indicators
+    are present in that dimension. It is not a proficiency percentage, level,
+    percentile or external benchmark.
+  labels_by_score:
+    0: "0 de 2 indicadores presentes"
+    1: "1 de 2 indicadores presentes"
+    2: "2 de 2 indicadores presentes"
+
+priority_selection:
+  enabled: true
+  min_score_formula: "min(all_dimension_scores)"
+  candidates_formula: "all dimensions where dimension_score == min_score"
+  fixed_tie_break_order:
+    - VIGENCIA_PROFESIONAL
+    - AI_DIGITAL_READINESS
+    - MARKET_AWARENESS
+    - TRANSFERIBILIDAD_EVIDENCIA
+    - ADAPTABILIDAD_ACCION
+  primary_priority_rule: >
+    If min_score is less than 2, primary_priority is the first priority
+    candidate in fixed_tie_break_order.
+  all_indicators_present_rule: >
+    If every dimension score equals 2, primary_priority is null and
+    priority_state is NO_PRIORITY_GAP_DETECTED.
+  tie_disclosure_rule: >
+    When more than one dimension has the minimum score, expose all tied
+    priority candidates in structured output even if the simple UI displays
+    only primary_priority.
+  meaning_boundary: >
+    Primary priority is an operational ordering rule for EXP-001. It is not
+    evidence that the selected dimension is uniquely or objectively the user's
+    most important career issue.
+
+strength_selection:
+  enabled: true
+  max_score_formula: "max(all_dimension_scores)"
+  candidates_formula: "all dimensions where dimension_score == max_score"
+  primary_strength_rule: >
+    primary_strength is the first strength candidate in fixed dimension order
+    when a single value is required.
+  all_zero_rule: >
+    If every dimension score equals 0, primary_strength is null and
+    strength_state is NO_RELATIVE_STRENGTH_IDENTIFIED.
+  tie_disclosure_rule: >
+    Preserve every dimension tied at the maximum score in
+    strength_candidates.
+
+result_blocks:
+  LO_QUE_YA_TIENES:
+    source: SCORING_MODEL
+    rule: >
+      Use strength_candidates and dimension scores. Do not claim verified
+      competence, mastery or market competitiveness.
+    default_template: >
+      Con base en tus respuestas, {dimension_label} presenta
+      {dimension_score} de 2 indicadores.
+    all_zero_template: >
+      Tus respuestas no identifican todavía una dimensión con indicadores
+      presentes dentro de este snapshot. Úsalo como punto de partida para
+      explorar prioridades.
+
+  LO_QUE_ESTA_CAMBIANDO:
+    source: PROFESSION_TRANSFORMATION_CARDS
+    scoring_model_behavior: NO_GENERATION
+    rule: >
+      The scoring model must not invent profession or market-change claims.
+      This block is supplied by the separate approved profession-transformation
+      content.
+
+  SIGUIENTE_PRIORIDAD:
+    source: SCORING_MODEL
+    default_template: >
+      Conviene explorar primero {dimension_label}, donde aparecen
+      {dimension_score} de 2 indicadores.
+    tied_template: >
+      Hay varias áreas con el mismo número mínimo de indicadores presentes.
+      Para mantener un resultado simple, se muestra primero
+      {primary_priority_label}; las demás áreas empatadas también deben
+      conservarse en el resultado estructurado.
+    all_two_template: >
+      No aparece una brecha prioritaria dentro de estas cinco dimensiones:
+      tus respuestas muestran 2 de 2 indicadores presentes en cada una.
+      Conviene mantenerlas y profundizar la evidencia de tus capacidades.
+
+validation_and_error_handling:
+  missing_required_response:
+    result_status: INVALID
+    score_generated: false
+    error_code: SCORE_INCOMPLETE
+    rule: >
+      Do not impute, default to No, prorate or calculate a partial score.
+
+  invalid_response_value:
+    result_status: INVALID
+    score_generated: false
+    error_code: SCORE_INVALID_VALUE
+    rule: >
+      Do not coerce an unknown value into Sí or No inside the scoring model.
+
+  duplicate_question_response:
+    result_status: INVALID
+    score_generated: false
+    error_code: SCORE_DUPLICATE_RESPONSE
+    rule: >
+      A scored question must resolve to exactly one canonical response.
+
+  unexpected_extra_scored_question:
+    result_status: INVALID
+    score_generated: false
+    error_code: SCORE_UNEXPECTED_QUESTION
+    rule: >
+      Only RDY-001 through RDY-010 are accepted as scored inputs.
+
+  non_scored_data:
+    result_status: VALID_IF_SCORED_INPUTS_VALID
+    rule: >
+      Intent, professional context and optional open text may be used for
+      segmentation or other approved result content but never change points,
+      dimension scores, overall total, priority ordering or strength ordering.
+
+structured_output_contract:
+  result_status: "VALID | INVALID"
+  total_indicators_present: "integer 0..10 when VALID"
+  dimensions:
+    VIGENCIA_PROFESIONAL: "integer 0..2 when VALID"
+    AI_DIGITAL_READINESS: "integer 0..2 when VALID"
+    MARKET_AWARENESS: "integer 0..2 when VALID"
+    TRANSFERIBILIDAD_EVIDENCIA: "integer 0..2 when VALID"
+    ADAPTABILIDAD_ACCION: "integer 0..2 when VALID"
+  priority_state: "PRIORITY_IDENTIFIED | NO_PRIORITY_GAP_DETECTED"
+  priority_candidates: "ordered list of dimension IDs"
+  primary_priority: "dimension ID or null"
+  strength_state: "STRENGTH_IDENTIFIED | NO_RELATIVE_STRENGTH_IDENTIFIED"
+  strength_candidates: "ordered list of dimension IDs"
+  primary_strength: "dimension ID or null"
+  error_code: "null when VALID; defined error code when INVALID"
+
+prohibited_interpretations:
+  - employability_percentage
+  - hiring_probability
+  - employment_retention_probability
+  - layoff_probability
+  - career_success_probability
+  - salary_prediction
+  - competence_percentage
+  - intelligence_score
+  - psychological_assessment
+  - profession_disappearance_prediction
+  - guaranteed_outcome
+  - comparison_to_population_without_evidence
+
+prohibited_display_examples:
+  - "Tienes 70% de empleabilidad."
+  - "Tu probabilidad de conseguir empleo es 70%."
+  - "Tienes alto riesgo de perder tu empleo."
+  - "Eres 80% competente."
+  - "Tu carrera está en riesgo."
+  - "Este resultado garantiza que estás preparado para el futuro."
+
+allowed_display_examples:
+  - "Tienes 7 de 10 indicadores de preparación profesional presentes."
+  - "AI / Digital Readiness: 1 / 2."
+  - "Basado en tus respuestas, conviene explorar esta dimensión."
+  - "Este snapshot es orientativo y resume únicamente tus respuestas actuales."
+
+implementation_requirements:
+  deterministic: true
+  reproducible: true
+  requires_database: false
+  requires_llm: false
+  requires_external_api: false
+  compatible_with:
+    - Google Forms
+    - Google Sheets
+    - Google Apps Script
+    - static HTML/CSS/JavaScript
+  formula_complexity: simple_addition_and_min_max_selection
+
+test_vectors:
+  - id: TV-SCORE-001
+    name: ALL_YES
+    responses:
+      RDY-001: "Sí"
+      RDY-002: "Sí"
+      RDY-003: "Sí"
+      RDY-004: "Sí"
+      RDY-005: "Sí"
+      RDY-006: "Sí"
+      RDY-007: "Sí"
+      RDY-008: "Sí"
+      RDY-009: "Sí"
+      RDY-010: "Sí"
+    expected:
+      result_status: VALID
+      total_indicators_present: 10
+      dimensions:
+        VIGENCIA_PROFESIONAL: 2
+        AI_DIGITAL_READINESS: 2
+        MARKET_AWARENESS: 2
+        TRANSFERIBILIDAD_EVIDENCIA: 2
+        ADAPTABILIDAD_ACCION: 2
+      priority_state: NO_PRIORITY_GAP_DETECTED
+      priority_candidates: []
+      primary_priority: null
+      strength_candidates:
+        - VIGENCIA_PROFESIONAL
+        - AI_DIGITAL_READINESS
+        - MARKET_AWARENESS
+        - TRANSFERIBILIDAD_EVIDENCIA
+        - ADAPTABILIDAD_ACCION
+      primary_strength: VIGENCIA_PROFESIONAL
+
+  - id: TV-SCORE-002
+    name: ALL_NO
+    responses:
+      RDY-001: "No"
+      RDY-002: "No"
+      RDY-003: "No"
+      RDY-004: "No"
+      RDY-005: "No"
+      RDY-006: "No"
+      RDY-007: "No"
+      RDY-008: "No"
+      RDY-009: "No"
+      RDY-010: "No"
+    expected:
+      result_status: VALID
+      total_indicators_present: 0
+      dimensions:
+        VIGENCIA_PROFESIONAL: 0
+        AI_DIGITAL_READINESS: 0
+        MARKET_AWARENESS: 0
+        TRANSFERIBILIDAD_EVIDENCIA: 0
+        ADAPTABILIDAD_ACCION: 0
+      priority_state: PRIORITY_IDENTIFIED
+      priority_candidates:
+        - VIGENCIA_PROFESIONAL
+        - AI_DIGITAL_READINESS
+        - MARKET_AWARENESS
+        - TRANSFERIBILIDAD_EVIDENCIA
+        - ADAPTABILIDAD_ACCION
+      primary_priority: VIGENCIA_PROFESIONAL
+      strength_state: NO_RELATIVE_STRENGTH_IDENTIFIED
+      strength_candidates: []
+      primary_strength: null
+
+  - id: TV-SCORE-003
+    name: CONTRACT_EXAMPLE_SEVEN_OF_TEN
+    responses:
+      RDY-001: "Sí"
+      RDY-002: "Sí"
+      RDY-003: "Sí"
+      RDY-004: "No"
+      RDY-005: "Sí"
+      RDY-006: "No"
+      RDY-007: "Sí"
+      RDY-008: "Sí"
+      RDY-009: "Sí"
+      RDY-010: "No"
+    expected:
+      result_status: VALID
+      total_indicators_present: 7
+      dimensions:
+        VIGENCIA_PROFESIONAL: 2
+        AI_DIGITAL_READINESS: 1
+        MARKET_AWARENESS: 1
+        TRANSFERIBILIDAD_EVIDENCIA: 2
+        ADAPTABILIDAD_ACCION: 1
+      priority_state: PRIORITY_IDENTIFIED
+      priority_candidates:
+        - AI_DIGITAL_READINESS
+        - MARKET_AWARENESS
+        - ADAPTABILIDAD_ACCION
+      primary_priority: AI_DIGITAL_READINESS
+      strength_state: STRENGTH_IDENTIFIED
+      strength_candidates:
+        - VIGENCIA_PROFESIONAL
+        - TRANSFERIBILIDAD_EVIDENCIA
+      primary_strength: VIGENCIA_PROFESIONAL
+
+  - id: TV-SCORE-004
+    name: UNIQUE_PRIORITY
+    responses:
+      RDY-001: "Sí"
+      RDY-002: "Sí"
+      RDY-003: "No"
+      RDY-004: "No"
+      RDY-005: "Sí"
+      RDY-006: "No"
+      RDY-007: "Sí"
+      RDY-008: "Sí"
+      RDY-009: "Sí"
+      RDY-010: "No"
+    expected:
+      result_status: VALID
+      total_indicators_present: 6
+      dimensions:
+        VIGENCIA_PROFESIONAL: 2
+        AI_DIGITAL_READINESS: 0
+        MARKET_AWARENESS: 1
+        TRANSFERIBILIDAD_EVIDENCIA: 2
+        ADAPTABILIDAD_ACCION: 1
+      priority_candidates:
+        - AI_DIGITAL_READINESS
+      primary_priority: AI_DIGITAL_READINESS
+
+  - id: TV-SCORE-005
+    name: MISSING_REQUIRED_RESPONSE
+    responses:
+      RDY-001: "Sí"
+      RDY-002: "Sí"
+      RDY-003: "Sí"
+      RDY-004: "No"
+      RDY-005: "Sí"
+      RDY-006: "No"
+      RDY-007: "Sí"
+      RDY-008: "Sí"
+      RDY-009: "Sí"
+    expected:
+      result_status: INVALID
+      score_generated: false
+      error_code: SCORE_INCOMPLETE
+
+  - id: TV-SCORE-006
+    name: INVALID_RESPONSE
+    responses:
+      RDY-001: "Tal vez"
+      RDY-002: "Sí"
+      RDY-003: "Sí"
+      RDY-004: "No"
+      RDY-005: "Sí"
+      RDY-006: "No"
+      RDY-007: "Sí"
+      RDY-008: "Sí"
+      RDY-009: "Sí"
+      RDY-010: "No"
+    expected:
+      result_status: INVALID
+      score_generated: false
+      error_code: SCORE_INVALID_VALUE
+
+  - id: TV-SCORE-007
+    name: NON_SCORED_DATA_DOES_NOT_CHANGE_SCORE
+    scored_responses:
+      RDY-001: "Sí"
+      RDY-002: "Sí"
+      RDY-003: "Sí"
+      RDY-004: "No"
+      RDY-005: "Sí"
+      RDY-006: "No"
+      RDY-007: "Sí"
+      RDY-008: "Sí"
+      RDY-009: "Sí"
+      RDY-010: "No"
+    scenario_a_non_scored:
+      INT-001: INT-01
+      PROF-003: "0–2"
+      VOC-001: null
+    scenario_b_non_scored:
+      INT-001: INT-05
+      PROF-003: "16+"
+      VOC-001: "Contexto diferente"
+    expected:
+      same_scoring_output: true
+      total_indicators_present: 7
+      primary_priority: AI_DIGITAL_READINESS
+      primary_strength: VIGENCIA_PROFESIONAL
+
+acceptance_criteria:
+  - all_scored_questions_are_exactly_RDY_001_through_RDY_010
+  - no_non_scored_question_changes_points
+  - yes_maps_to_one_and_no_maps_to_zero
+  - every_dimension_contains_exactly_two_approved_questions
+  - every_dimension_range_is_zero_to_two
+  - overall_range_is_zero_to_ten
+  - no_weights_are_used
+  - missing_answers_do_not_generate_partial_scores
+  - invalid_values_do_not_generate_scores
+  - priority_ties_are_preserved_and_deterministically_ordered
+  - all_two_case_does_not_invent_a_priority_gap
+  - all_zero_case_does_not_invent_a_relative_strength
+  - total_is_described_as_indicators_present_not_percentage
+  - prohibited_employment_interpretations_are_explicit
+  - model_is_implementation_neutral
+  - test_vectors_are_reproducible
+  - artifact_remains_compatible_with_exp001_no_code_architecture
+
+review_state:
+  content_self_check: COMPLETE
+  lifecycle_status: DRAFT
+  acceptance_review: PENDING
+  registration: PENDING
+  evidence: PENDING
+  dependency_advance: NOT_AUTHORIZED
