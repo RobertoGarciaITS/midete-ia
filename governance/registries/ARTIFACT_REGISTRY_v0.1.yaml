@@ -40,3 +40,4 @@ artifacts:
   - {id: ART-037, path: prompts/experiment/EXP_001_PROMPT_CATALOG_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
   - {id: ART-038, path: docs/architecture/EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md, phase: P01, status: APPROVED, validation_state: ACCEPTED}
   - {id: ART-039, path: docs/architecture/adr/ADR_EXP001_001_STAGE0_WEB_APP_ARCHITECTURE_v0.1.md, phase: P01, status: APPROVED}
+  - {id: ART-040, path: docs/project/ROLE_TECHNOLOGY_EXECUTION_MATRIX_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
