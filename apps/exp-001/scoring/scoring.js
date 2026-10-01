@@ -93,7 +93,6 @@ function scoreAssessment(input) {
 
   return {
     result_status: 'VALID',
-    score_generated: true,
     total_indicators_present: scores.reduce((total, score) => total + score, 0),
     dimensions,
     priority_state: allIndicatorsPresent ? 'NO_PRIORITY_GAP_DETECTED' : 'PRIORITY_IDENTIFIED',
@@ -106,10 +105,14 @@ function scoreAssessment(input) {
   };
 }
 
-module.exports = {
+const publicApi = {
   DIMENSION_ORDER,
   NON_SCORED_QUESTIONS,
   REQUIRED_QUESTIONS,
   scoreAssessment
 };
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = publicApi;
+}
 
