@@ -22,7 +22,7 @@ active_experiments:
   EXP-001-00: {name: Micro MVP Contract Baseline, depends_on: [GATE-P00, GOV-ARCH-001], status: COMPLETE}
   EXP-001-01: {name: Experiment Hypothesis, depends_on: [EXP-001-00], status: COMPLETE}
   EXP-001-02: {name: Assessment Question Bank, depends_on: [EXP-001-01], status: COMPLETE}
-  EXP-001-03: {name: Scoring Model, depends_on: [EXP-001-02], status: READY}
+  EXP-001-03: {name: Scoring Model, depends_on: [EXP-001-02], status: COMPLETE}
   EXP-001-04: {name: Profession Transformation Cards, depends_on: [EXP-001-01], status: BLOCKED}
   EXP-001-05: {name: Landing Copy, depends_on: [EXP-001-01], status: BLOCKED}
   EXP-001-06: {name: Privacy Disclaimer, depends_on: [EXP-001-00], status: READY}
