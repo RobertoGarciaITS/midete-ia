@@ -12,7 +12,9 @@
 **Parent Contract:** `MICRO_MVP_001_CONTRACT_v0.1.md`  
 **Architecture Contract:** `EVOLUTIONARY_ARCHITECTURE_CONTRACT_v0.1.md`  
 **Prompt Catalog:** `EXP_001_PROMPT_CATALOG_v0.1.md`  
-**Decision Gate:** `GATE-EXP-001`
+**Decision Gate:** `GATE-EXP-001`  
+**Upstream Dependencies:** `ART-023`, `ART-024`, `ART-025`, `ART-026`, current EXP-001 state  
+**Downstream Consumers:** `ART-037`, WP-01 through WP-15 execution packages
 
 ## 1. Purpose
 
