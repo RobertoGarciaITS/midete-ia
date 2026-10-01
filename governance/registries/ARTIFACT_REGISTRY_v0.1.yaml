@@ -35,3 +35,5 @@ artifacts:
   - {id: ART-032, path: skills/product-management/SKILL.md, phase: P01, status: APPROVED}
   - {id: ART-033, path: docs/product/PROBLEM_STATEMENT_v0.1.md, phase: P01, status: PLANNED}
   - {id: ART-034, path: docs/project/P01_BOOTSTRAP_RECONCILIATION_v0.1.md, phase: P01, status: APPROVED}
+  - {id: ART-036, path: docs/product/experiments/EXP-001/EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
+  - {id: ART-037, path: prompts/experiment/EXP_001_PROMPT_CATALOG_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
