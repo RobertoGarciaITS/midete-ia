@@ -58,6 +58,10 @@ experiments:
   EXP-001:
     name: AI_CAREER_TRANSFORMATION_SNAPSHOT
     status: READY
+    delivery_model: ROLLING_WAVE_PROGRESSIVE_ELABORATION
     contract: docs/product/experiments/EXP-001/MICRO_MVP_001_CONTRACT_v0.1.md
+    execution_plan: docs/product/experiments/EXP-001/EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md
+    prompt_catalog: prompts/experiment/EXP_001_PROMPT_CATALOG_v0.1.md
     next_work_item: EXP-001-03
+    next_delivery_package: WP-01_SCORING_ACCEPTANCE
     gate: GATE-EXP-001
