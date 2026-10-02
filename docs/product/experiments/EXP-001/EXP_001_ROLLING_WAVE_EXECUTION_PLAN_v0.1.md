@@ -5,8 +5,8 @@
 **Artifact ID:** `ART-036`  
 **Version:** `v0.1`  
 **Phase:** `P01`  
-**Status:** `DRAFT`  
-**Validation State:** `READY_FOR_REVIEW`  
+**Status:** `APPROVED`  
+**Validation State:** `ACCEPTED`  
 **Owner / Role:** Product Management / Architecture Governance  
 **Experiment:** `EXP-001`  
 **Parent Contract:** `MICRO_MVP_001_CONTRACT_v0.1.md`  
