@@ -5,8 +5,8 @@
 **Artifact ID:** `ART-041`  
 **Version:** `v0.1`  
 **Phase:** `P01`  
-**Status:** `DRAFT`  
-**Validation State:** `READY_FOR_REVIEW`  
+**Status:** `APPROVED`  
+**Validation State:** `ACCEPTED`  
 **Owner / Role:** Product Management / Architecture Governance  
 **Scope:** Global information architecture and project-status model  
 **Upstream Dependencies:** `AGENTS.md`, `PROJECT_EXECUTION_MANIFEST_v0.1.yaml`, `CONTEXT_ACQUISITION_CONTRACT_v0.1.md`, `REPOSITORY_STRUCTURE_CONTRACT_v0.1.md`, `REQUIREMENT_TRACEABILITY_CONTRACT_v0.1.md`, `ARTIFACT_LIFECYCLE_CONTRACT_v0.1.md`, `CHANGE_CONTROL_CONTRACT_v0.1.md`, `ART-036`, `ART-040`  
@@ -809,10 +809,10 @@ Experiment Model          PRESENT
 Work Package Model        PRESENT
 Role / Execution Matrix   PRESENT (ART-040 draft)
 
-Root README dashboard      STALE
-Experiment README          NOT PRESENT
-Status roll-up rules       NOT FORMALIZED
-Automated roll-up          NOT PRESENT
+Root README dashboard      IMPLEMENTED / DERIVED VIEW
+Experiment README          IMPLEMENTED FOR EXP-001 / ART-043
+Status roll-up rules       FORMALIZED / MANUAL DERIVED VIEW
+Automated roll-up          NOT PRESENT / DEFERRED
 ```
 
 Therefore the recommended strategy is refinement, not replacement.
@@ -823,14 +823,17 @@ Therefore the recommended strategy is refinement, not replacement.
 
 This information-architecture design does not change EXP-001 state.
 
-At the time this artifact is drafted:
+Current reconciled state:
 
 - EXP-001 remains the active experiment;
-- WP-03 remains governed by existing canonical state;
-- implementation/testing evidence must be reconciled separately;
-- no WP-04 activation is authorized by this artifact.
+- WP-03 is COMPLETE with ART-042 acceptance and EVID-EXP001-WP03-001;
+- WP-04 is the next planned delivery package but has no active delivery prompt and is not authorized for execution;
+- the root README now functions as a derived Project Command Center;
+- ART-043 provides the first experiment-level operational README for EXP-001;
+- status roll-up is currently manual and derived from canonical structured state;
+- automated roll-up remains deferred until the derived rules are proven stable.
 
-The information model should be adopted only after current-state reconciliation avoids creating an additional stale status view.
+The information model is therefore adopted at the navigation/view layer without replacing the existing governance control plane.
 
 ---
 
