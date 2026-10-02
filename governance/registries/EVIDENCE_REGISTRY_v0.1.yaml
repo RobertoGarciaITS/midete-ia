@@ -76,5 +76,14 @@ evidence:
     source: docs/architecture/EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md
     commit: 59c2a10a3a22d8471bc699b2e4e670941eb6dec3
     limitation: Architecture-fit evidence validates the Stage-0 technology decision for the current EXP-001 requirements; it does not validate production quotas, public deployment permissions, runtime reliability, or live-user behavior.
+  - id: EVID-EXP001-WP03-001
+    work_item: EXP-001-WP03
+    type: TEST
+    result: PASS
+    source: docs/product/experiments/EXP-001/WP_03_SCORING_ENGINE_ACCEPTANCE_v0.1.md
+    timestamp: 2026-10-02
+    commit: 91878b56ae3c3ae3b256604aadae3c8e202fc301
+    acceptance_commit: 48256f8706ab2d2db397982885b594f7837e49f9
+    limitation: Implementation-level evidence only; validates deterministic scoring logic and 9/9 automated tests, not Apps Script deployment, UI integration, persistence, live-user behavior, production reliability or commercial outcomes.
 reserved_evidence:
   - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
