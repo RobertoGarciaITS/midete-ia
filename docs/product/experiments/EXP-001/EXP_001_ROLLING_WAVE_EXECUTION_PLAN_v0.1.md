@@ -90,7 +90,8 @@ EXP-001-03 Scoring Model            COMPLETE / ART-035 APPROVED
 
 WP-01 Scoring Acceptance            COMPLETE
 WP-02 Architecture Fit Check        COMPLETE
-WP-03 Scoring Engine                READY / NEXT
+WP-03 Scoring Engine                COMPLETE
+WP-04 Assessment Capture            PLANNED / NEXT
 ```
 
 Architecture baseline for WP-03:
@@ -106,7 +107,7 @@ Decision references:
 - `ART-038 — EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md`
 - `ART-039 — ADR_EXP001_001_STAGE0_WEB_APP_ARCHITECTURE_v0.1.md`
 
-The first implementation code is now authorized for planning/execution through WP-03, subject to the explicit user authorization required for repository mutations.
+WP-03 implementation is accepted and complete. WP-04 is the next planned delivery package, but it has no active delivery prompt and is not authorized for execution until its execution-ready package and explicit user authorization are resolved.
 
 ## 5. Work-package backlog
 
@@ -114,8 +115,8 @@ The first implementation code is now authorized for planning/execution through W
 |---:|---|---|---|---|---|---|
 | WP-01 | Scoring Acceptance | ChatGPT | — | ChatGPT | accepted scoring model + evidence | COMPLETE |
 | WP-02 | Architecture Fit Check | ChatGPT | — | ChatGPT | Stage-0 implementation decision | COMPLETE |
-| WP-03 | Scoring Engine | ChatGPT spec | Codex | Codex + ChatGPT audit | executable scoring + tests | NEXT / READY |
-| WP-04 | Assessment Capture | ChatGPT | Codex | Codex + ChatGPT audit | functional assessment | PLANNED |
+| WP-03 | Scoring Engine | ChatGPT spec | Codex | Codex + ChatGPT audit | executable scoring + tests | COMPLETE |
+| WP-04 | Assessment Capture | ChatGPT | Codex | Codex + ChatGPT audit | functional assessment | NEXT / PLANNED |
 | WP-05 | Response Storage | ChatGPT | Codex | Codex + ChatGPT audit | minimal persistence | PLANNED |
 | WP-06 | Result Snapshot | ChatGPT | Codex | Codex + ChatGPT audit | immediate result | PLANNED |
 | WP-07 | Profession Transformation Cards | ChatGPT | Codex integration | ChatGPT | approved cards + integration | PLANNED |
