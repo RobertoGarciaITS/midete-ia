@@ -5,8 +5,8 @@
 **Artifact ID:** `ART-040`  
 **Version:** `v0.1`  
 **Phase:** `P01`  
-**Status:** `DRAFT`  
-**Validation State:** `READY_FOR_REVIEW`  
+**Status:** `APPROVED`  
+**Validation State:** `ACCEPTED`  
 **Owner / Role:** Product Management / Architecture Governance  
 **Scope:** Global project reference with current EXP-001 execution mapping  
 **Upstream Dependencies:** `AGENTS.md`, `SKILL_REGISTRY_v0.1.yaml`, `ART-036`, `ART-038`, `ART-039`  
@@ -94,9 +94,9 @@ They are not an HR certification or an assessment of any individual.
 | Product Management | PRACTICED / ACTIVE | Micro-MVP scope, hypothesis, rolling-wave plan, work-package sequencing |
 | Business Analysis | PRACTICED | Assessment Question Bank and approved Scoring Model |
 | Software / Solution Architecture | PRACTICED / ACTIVE | Evolutionary Architecture Contract, Architecture Fit Review, Stage-0 ADR |
-| JavaScript / Frontend Engineering | ACTIVE | WP-03 scoring engine implementation |
-| QA / Testing | ACTIVE | WP-03 canonical scoring tests and ChatGPT acceptance audit |
-| Google Apps Script Development | NEXT | Selected Stage-0 runtime; integration begins in later work packages |
+| JavaScript / Frontend Engineering | PRACTICED / WP-03 COMPLETE | WP-03 scoring engine accepted; WP-04 assessment capture is the next planned UI slice |
+| QA / Testing | PRACTICED / WP-03 COMPLETE | WP-03 canonical scoring tests and acceptance evidence completed with 9/9 tests passing |
+| Google Apps Script Development | NEXT / PLANNED | Selected Stage-0 runtime; WP-04 assessment capture is the next planned integration step |
 | Data / Experiment Analytics | NEXT | Analytics and measurement packages are planned |
 | Security / Privacy | NEXT | Privacy slice precedes real-user launch |
 | Backend Engineering | DEFERRED | No verified requirement for custom backend |
@@ -320,9 +320,9 @@ The current project provides practical exposure to:
 Product Management          PRACTICED / ACTIVE
 Business Analysis           PRACTICED
 Solution Architecture       PRACTICED / ACTIVE
-JavaScript Engineering      ACTIVE
-QA / Testing                ACTIVE
-Apps Script Development     NEXT
+JavaScript Engineering      PRACTICED / WP-03 COMPLETE
+QA / Testing                PRACTICED / WP-03 COMPLETE
+Apps Script Development     NEXT / PLANNED
 Data / Experiment Analytics NEXT
 Security / Privacy          NEXT
 
