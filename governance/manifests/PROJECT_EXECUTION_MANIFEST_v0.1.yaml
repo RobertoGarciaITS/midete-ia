@@ -64,7 +64,7 @@ experiments:
     prompt_catalog: prompts/experiment/EXP_001_PROMPT_CATALOG_v0.1.md
     architecture_fit_review: docs/architecture/EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md
     architecture_decision: docs/architecture/adr/ADR_EXP001_001_STAGE0_WEB_APP_ARCHITECTURE_v0.1.md
-    active_delivery_prompt: prompts/experiment/EXP_001_SCORING_ENGINE_IMPLEMENTATION_PROMPT_v0.1.md
+    active_delivery_prompt: null
     next_work_item: EXP-001-06
-    next_delivery_package: WP-03_SCORING_ENGINE
+    next_delivery_package: WP-04_ASSESSMENT_CAPTURE
     gate: GATE-EXP-001
