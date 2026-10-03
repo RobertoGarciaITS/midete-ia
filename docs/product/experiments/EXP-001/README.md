@@ -70,6 +70,7 @@ The result is advisory decision-support. It does not predict employment, job los
 | Rolling-Wave Plan | ART-036 — APPROVED / ACCEPTED |
 | Architecture Fit | ART-038 — APPROVED / ACCEPTED |
 | Stage-0 ADR | ART-039 — APPROVED |
+| Functional Architecture Spec | ART-045 — DRAFT / READY_FOR_REVIEW |
 | Scoring Engine Acceptance | ART-042 — APPROVED / ACCEPTED |
 | Next experiment dependency item | EXP-001-06 — Privacy Disclaimer |
 | Next delivery package | WP-04 — Assessment Capture — NEXT / PLANNED |
@@ -159,6 +160,9 @@ priority + strength
 structured result
 ~~~
 
+Functional integration design:
+[ART-045 — EXP-001 MVP Functional Architecture Spec](../../../architecture/EXP_001_MVP_FUNCTIONAL_ARCHITECTURE_SPEC_v0.1.md).
+
 The scoring engine intentionally has no dependency on:
 
 - Google Sheets;
@@ -221,6 +225,7 @@ EXP-001 does **not** yet contain market-validation results.
 - [ART-042 — WP-03 Acceptance](WP_03_SCORING_ENGINE_ACCEPTANCE_v0.1.md)
 - [Architecture Fit Review](../../../architecture/EXP_001_ARCHITECTURE_FIT_REVIEW_v0.1.md)
 - [Stage-0 ADR](../../../architecture/adr/ADR_EXP001_001_STAGE0_WEB_APP_ARCHITECTURE_v0.1.md)
+- [ART-045 — Functional Architecture Spec](../../../architecture/EXP_001_MVP_FUNCTIONAL_ARCHITECTURE_SPEC_v0.1.md)
 
 Project-level source of truth:
 [Project Execution Manifest](../../../../governance/manifests/PROJECT_EXECUTION_MANIFEST_v0.1.yaml).
