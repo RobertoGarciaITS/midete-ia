@@ -45,3 +45,4 @@ artifacts:
   - {id: ART-042, path: docs/product/experiments/EXP-001/WP_03_SCORING_ENGINE_ACCEPTANCE_v0.1.md, phase: P01, status: APPROVED, validation_state: ACCEPTED}
   - {id: ART-043, path: docs/product/experiments/EXP-001/README.md, phase: P01, status: APPROVED, validation_state: ACCEPTED}
   - {id: ART-044, path: governance/contracts/EXP_001_SPEC_BASELINE_EXECUTION_CONTRACT_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
+  - {id: ART-045, path: docs/architecture/EXP_001_MVP_FUNCTIONAL_ARCHITECTURE_SPEC_v0.1.md, phase: P01, status: DRAFT, validation_state: READY_FOR_REVIEW}
