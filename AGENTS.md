@@ -1,5 +1,28 @@
 # AGENTS.md — Mídete IA
 
+## Canonical repository scope — mandatory
+
+Canonical project repository:
+
+```text
+RobertoGarciaITS/midete-ia
+```
+
+Before any repository-native operation, verify that the actual repository matches this exact identity.
+
+Rules:
+- All Mídete IA repository reads, branches, commits, diffs, PRs, Actions, evidence and persistent mutations must target `RobertoGarciaITS/midete-ia`.
+- There is no fallback repository.
+- Do not substitute another repository from memory, a previous chat, another project, a similar repository name, or a prior implementation.
+- Prior-conversation memory and other-project repository content are noncanonical and never override live Mídete IA repository truth.
+- If repository identity is unknown or mismatched, STOP and report `BLOCKED_REPOSITORY_SCOPE_MISMATCH`.
+- Cross-repository research requires explicit User authorization, is read-only by default, and does not change the canonical project repository.
+- Persistent mutation outside `RobertoGarciaITS/midete-ia` is prohibited under this project context.
+- Changing the canonical repository requires an explicit User decision and governed update of the repository-scope contract and this file.
+
+Governing contract:
+`governance/contracts/REPOSITORY_SCOPE_BINDING_CONTRACT_v0.1.md`.
+
 ## Mandatory bootstrap sequence
 
 Before performing work, read in this order:
