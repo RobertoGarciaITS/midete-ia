@@ -200,6 +200,13 @@ WORK_ITEM:
 PHASE:
 TASK_TYPE:
 
+EXECUTION_MODEL:
+SPEC_OWNER:
+BUILD_OWNER:
+TECHNICAL_TEST_OWNER:
+REVIEW_OWNER:
+APPROVAL_OWNER:
+
 PRIMARY_BASELINE:
 BASELINE_CLAUSES:
 
@@ -233,6 +240,21 @@ EXECUTION_CLASSIFICATION:
 ```
 
 No field required by AGENTS.md may be inferred when unresolved.
+
+Execution ownership must resolve through `ART-046 — AI_EXECUTION_ORCHESTRATION_CONTRACT_v0.1.md`.
+
+For persistent product-code work, a task that requires specification, implementation and independent acceptance should normally resolve as:
+
+```text
+EXECUTION_MODEL: CHATGPT_CODEX_CHATGPT
+SPEC_OWNER: ChatGPT
+BUILD_OWNER: Codex
+TECHNICAL_TEST_OWNER: Codex
+REVIEW_OWNER: ChatGPT
+APPROVAL_OWNER: User
+```
+
+A different routing is allowed only when the task characteristics and governing artifacts justify it explicitly.
 
 ---
 
@@ -278,6 +300,12 @@ A task can conform to the spec and still be blocked from execution.
 Execution readiness requires, where applicable:
 
 - work-item identity;
+- resolved execution model;
+- resolved specification owner;
+- resolved build owner;
+- resolved technical test owner;
+- resolved review owner;
+- resolved approval owner;
 - valid dependency state;
 - approved or executable prompt;
 - required skill available for the work-item scope;
@@ -347,6 +375,8 @@ Use when:
 
 - authority cannot be resolved;
 - approved sources conflict;
+- execution model or required ownership is unresolved;
+- routing conflicts with ART-046;
 - prompt is missing;
 - skill is unavailable for the scope;
 - required upstream artifact is missing;
@@ -545,10 +575,13 @@ List what must remain unchanged.
 ### E. Scope-creep check
 Identify requested behavior absent from approved specifications.
 
-### F. Execution-readiness check
+### F. Execution-routing check
+Resolve execution model, specification owner, build owner, technical-test owner, review owner and approval owner through ART-046.
+
+### G. Execution-readiness check
 Resolve prompt, skill, contract, dependencies, acceptance, evidence and authorization.
 
-### G. Classification
+### H. Classification
 Return exactly one execution classification from Section 10.
 
 ---
