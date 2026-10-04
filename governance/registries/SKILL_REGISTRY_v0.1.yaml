@@ -14,7 +14,7 @@ skills:
   - {id: SK-QA, name: qa-testing, status: REGISTERED}
   - {id: SK-SEC, name: security, status: REGISTERED}
   - {id: SK-FINOPS, name: finops, status: REGISTERED}
-  - {id: SK-DOC, name: technical-documentation, status: REGISTERED}
+  - {id: SK-DOC, name: technical-documentation, status: AVAILABLE, path: skills/technical-documentation/SKILL.md, scope: GLOBAL_GOVERNANCE_DOCUMENTATION}
 specialized_skills_planned:
   - career-assessment-design
   - job-fit-engine
