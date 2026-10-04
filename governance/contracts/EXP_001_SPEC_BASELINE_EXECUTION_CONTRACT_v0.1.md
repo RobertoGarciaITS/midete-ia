@@ -9,7 +9,7 @@
 **Owner / Role:** Product Management / Architecture Governance / Execution Governance  
 **Scope:** EXP-001 baseline-conformant task execution  
 **Primary Baseline:** `ART-023 — MICRO_MVP_001_CONTRACT_v0.1.md`  
-**Upstream Dependencies:** `AGENTS.md`, `ART-023`, `ART-024`, `ART-029`, `ART-035`, `ART-036`, `ART-038`, `ART-039`, Artifact Lifecycle Contract, Change Control Contract, Context Acquisition Contract, Requirement Traceability Contract  
+**Upstream Dependencies:** `AGENTS.md`, `ART-023`, `ART-024`, `ART-029`, `ART-035`, `ART-036`, `ART-038`, `ART-039`, `ART-046`, Artifact Lifecycle Contract, Change Control Contract, Context Acquisition Contract, Requirement Traceability Contract  
 **Downstream Consumers:** future EXP-001 work-package prompts, implementation tasks, acceptance reviews, QA, evidence reconciliation, governance validators  
 **Gate:** `GATE-EXP-001`
 
@@ -525,6 +525,14 @@ For current EXP-001 work:
 
 - `ART-036 — EXP_001_ROLLING_WAVE_EXECUTION_PLAN_v0.1.md`
 - `ART-037 — EXP_001_PROMPT_CATALOG_v0.1.md` remains planning-oriented until a prompt is formally executable under current governance.
+
+### Functional architecture integration
+
+- `ART-045 — EXP_001_MVP_FUNCTIONAL_ARCHITECTURE_SPEC_v0.1.md` defines the current functional integration model and remains `DRAFT / READY_FOR_REVIEW` until formally accepted.
+
+### Execution orchestration
+
+- `ART-046 — AI_EXECUTION_ORCHESTRATION_CONTRACT_v0.1.md` defines execution routing and ownership resolution and remains `DRAFT / READY_FOR_REVIEW` until formally accepted.
 
 This list does not authorize downstream work by itself.
 
