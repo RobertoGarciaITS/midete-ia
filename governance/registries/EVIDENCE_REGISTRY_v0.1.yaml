@@ -85,5 +85,11 @@ evidence:
     commit: 91878b56ae3c3ae3b256604aadae3c8e202fc301
     acceptance_commit: 48256f8706ab2d2db397982885b594f7837e49f9
     limitation: Implementation-level evidence only; validates deterministic scoring logic and 9/9 automated tests, not Apps Script deployment, UI integration, persistence, live-user behavior, production reliability or commercial outcomes.
-reserved_evidence:
-  - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
+  - id: EVID-P01-001
+    work_item: P01-01
+    type: REVIEW
+    result: PASS
+    source: docs/product/PROBLEM_STATEMENT_v0.1.md
+    timestamp: 2026-10-04
+    commit: dd02fdff434c4c497e8a64a36191b805e680fc02
+    limitation: Review confirms P01-01 document completeness and traceability only; underlying market hypotheses remain unvalidated, User approval of material product direction is pending, P01-02 remains blocked, and GATE-P01 is unchanged.
