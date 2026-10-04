@@ -245,6 +245,11 @@ authorization for persistent changes and material progression
 Detailed role mapping:
 [ART-040 — Role Technology Execution Matrix](docs/project/ROLE_TECHNOLOGY_EXECUTION_MATRIX_v0.1.md).
 
+Execution routing contract:
+[ART-046 — AI Execution Orchestration Contract](governance/contracts/AI_EXECUTION_ORCHESTRATION_CONTRACT_v0.1.md).
+
+Before execution, the task must resolve whether the primary model is `CHATGPT`, `CODEX`, or `CHATGPT_CODEX_CHATGPT`, together with specification, build, technical-test, review and approval ownership.
+
 Persistent repository mutations require explicit user authorization.
 
 ---
@@ -312,6 +317,7 @@ See:
 Key control-plane files:
 
 - [AGENTS.md](AGENTS.md)
+- [AI Execution Orchestration Contract](governance/contracts/AI_EXECUTION_ORCHESTRATION_CONTRACT_v0.1.md)
 - [Project Execution Manifest](governance/manifests/PROJECT_EXECUTION_MANIFEST_v0.1.yaml)
 - [Artifact Registry](governance/registries/ARTIFACT_REGISTRY_v0.1.yaml)
 - [Dependency Registry](governance/registries/DEPENDENCY_REGISTRY_v0.1.yaml)
@@ -345,6 +351,8 @@ Constitution
 Manifest
    ↓
 Context Acquisition Contract
+   ↓
+AI Execution Orchestration Contract
    ↓
 Traceability / Registries
    ↓
@@ -426,5 +434,6 @@ For a human reader:
 For an LLM or coding agent:
 
 1. Read [AGENTS.md](AGENTS.md).
-2. Follow its mandatory bootstrap sequence exactly.
-3. Never infer later-phase or next-work-package execution authority.
+2. Follow its mandatory bootstrap sequence exactly, including the AI Execution Orchestration Contract.
+3. Resolve the execution model and ownership before invoking a skill or implementation agent.
+4. Never infer later-phase or next-work-package execution authority.
