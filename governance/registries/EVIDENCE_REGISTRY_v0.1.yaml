@@ -89,7 +89,7 @@ evidence:
     work_item: GOV-SCOPE-001
     type: REVIEW
     result: PASS
-    source: governance/contracts/REPOSITORY_SCOPE_BINDING_CONTRACT_v0.1.md + AGENTS.md
+    source: governance/contracts/REPOSITORY_SCOPE_BINDING_CONTRACT_v0.1.md + AGENTS.md + skills/technical-documentation/SKILL.md
     authorization: USER_EXPLICIT_2026-10-04
     limitation: Repository binding constrains project execution targeting; it does not authorize cross-repository mutation, phase progression, deployment, release or product-scope change.
 reserved_evidence:
