@@ -17,6 +17,7 @@ global_governance:
   GOV-ARCH-002: {name: Technology Adoption Decision Matrix, depends_on: [GOV-ARCH-001], status: COMPLETE}
   GOV-ARCH-003: {name: Architecture Evolution Roadmap, depends_on: [GOV-ARCH-001, GOV-ARCH-002], status: COMPLETE}
   GOV-STD-001: {name: Task Completion Report Standard, depends_on: [P00-02, P00-04, P00-07, P00-08], status: COMPLETE}
+  GOV-SCOPE-001: {name: Repository Scope Binding, depends_on: [P00-02, GOV-CTX-001], status: COMPLETE}
 
 active_experiments:
   EXP-001-00: {name: Micro MVP Contract Baseline, depends_on: [GATE-P00, GOV-ARCH-001], status: COMPLETE}
