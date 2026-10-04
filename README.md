@@ -8,6 +8,21 @@ The long-term vision is intentionally broader than the current implementation. T
 
 ---
 
+## Repository scope binding
+
+The canonical repository for Mídete IA is:
+
+```text
+RobertoGarciaITS/midete-ia
+```
+
+All repository-native project execution must target that exact repository. Other repositories are noncanonical and may only be consulted when the User explicitly authorizes cross-repository research. Repository mismatch is a stop condition.
+
+See:
+[ART-047 — Repository Scope Binding Contract](governance/contracts/REPOSITORY_SCOPE_BINDING_CONTRACT_v0.1.md).
+
+---
+
 ## 1. Long-term vision
 
 Mídete IA is intended to evolve toward:
@@ -317,6 +332,7 @@ See:
 Key control-plane files:
 
 - [AGENTS.md](AGENTS.md)
+- [Repository Scope Binding Contract](governance/contracts/REPOSITORY_SCOPE_BINDING_CONTRACT_v0.1.md)
 - [AI Execution Orchestration Contract](governance/contracts/AI_EXECUTION_ORCHESTRATION_CONTRACT_v0.1.md)
 - [Project Execution Manifest](governance/manifests/PROJECT_EXECUTION_MANIFEST_v0.1.yaml)
 - [Artifact Registry](governance/registries/ARTIFACT_REGISTRY_v0.1.yaml)
