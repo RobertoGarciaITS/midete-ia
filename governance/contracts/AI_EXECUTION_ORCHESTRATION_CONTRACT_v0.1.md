@@ -8,7 +8,7 @@
 **Validation State:** `READY_FOR_REVIEW`  
 **Owner / Role:** Project Governance / AI Execution Governance  
 **Scope:** Task routing and handoff among User, ChatGPT, Codex and future execution agents  
-**Upstream Dependencies:** Project Constitution, `AGENTS.md`, Context Acquisition Contract, Artifact Lifecycle Contract, Change Control Contract, Requirement Traceability Contract, current Project Execution Manifest  
+**Upstream Dependencies:** Project Constitution, `ART-040 — ROLE_TECHNOLOGY_EXECUTION_MATRIX_v0.1.md`, Context Acquisition Contract, Artifact Lifecycle Contract, Change Control Contract, Requirement Traceability Contract, current Project Execution Manifest  
 **Downstream Consumers:** `AGENTS.md`, work-package prompts, task prompts, skills, ART-044 task conformance declarations, acceptance reviews, implementation handoffs, evidence reconciliation  
 **Authority Boundary:** This contract assigns execution responsibility; it does not authorize repository mutation, phase progression, deployment or gate approval.
 
