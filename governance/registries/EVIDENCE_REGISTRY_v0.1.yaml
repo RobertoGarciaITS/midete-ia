@@ -85,5 +85,12 @@ evidence:
     commit: 91878b56ae3c3ae3b256604aadae3c8e202fc301
     acceptance_commit: 48256f8706ab2d2db397982885b594f7837e49f9
     limitation: Implementation-level evidence only; validates deterministic scoring logic and 9/9 automated tests, not Apps Script deployment, UI integration, persistence, live-user behavior, production reliability or commercial outcomes.
+  - id: EVID-GOV-SCOPE-001
+    work_item: GOV-SCOPE-001
+    type: REVIEW
+    result: PASS
+    source: governance/contracts/REPOSITORY_SCOPE_BINDING_CONTRACT_v0.1.md + AGENTS.md
+    authorization: USER_EXPLICIT_2026-10-04
+    limitation: Repository binding constrains project execution targeting; it does not authorize cross-repository mutation, phase progression, deployment, release or product-scope change.
 reserved_evidence:
   - {id: EVID-P01-001, work_item: P01-01, status: PENDING, result: NOT_EVALUATED}
